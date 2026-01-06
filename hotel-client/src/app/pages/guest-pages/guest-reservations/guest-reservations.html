@@ -1,0 +1,174 @@
+<div class="page page-container">
+  <div class="header">
+    <button routerLink="/guest/home" class="btn-back">
+      <span class="iconify" data-icon="mdi:arrow-left"></span>
+      Back to Home
+    </button>
+    <h2>My Reservations</h2>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner-border" role="status"></div>
+  </div>
+
+  <div *ngIf="!loading && list.length > 0" class="items-grid grid-cols-2 md-cols-2 sm-cols-1">
+    <div class="reservation-card" *ngFor="let r of list">
+      <div class="card-header" style="justify-content: flex-end;">
+        <span class="status-badge" [ngClass]="r.status?.toLowerCase()">{{r.status}}</span>
+      </div>
+
+      <div class="card-body">
+
+        <div class="hotel-row">
+          <span class="iconify" data-icon="mdi:domain"></span>
+          <div>
+            <strong>{{r.hotelName || 'My Hotel'}}</strong>
+            <div class="hotel-address" *ngIf="r.hotelAddress">{{r.hotelAddress}}, {{r.hotelCity}}</div>
+          </div>
+        </div>
+
+        <div class="date-row">
+          <span class="iconify" data-icon="mdi:calendar-range"></span>
+          <span>{{r.checkIn}} — {{r.checkOut}}</span>
+        </div>
+
+        <div class="rooms-list" *ngIf="r.rooms && r.rooms.length > 0">
+          <div class="room-item" *ngFor="let rm of r.rooms">
+            <div class="room-info">
+              <span class="room-label">Room:</span>
+              <span class="room-number">{{rm.roomNumber}}</span>
+              <span class="room-separator"> • </span>
+              <span class="room-type">{{rm.roomType}}</span>
+            </div>
+            <span class="room-price">₹{{rm.price}}</span>
+          </div>
+        </div>
+        <p class="total">Estimated Total: ₹{{r.totalAmount}}</p>
+      </div>
+
+      <div class="card-actions">
+        <button *ngIf="['booked','confirmed','pending'].includes(r.status.toLowerCase())" class="btn-cancel"
+          (click)="cancel(r.reservationId)">
+          Cancel Booking
+        </button>
+        <div class="payment-area">
+          <div *ngIf="(r.paymentStatus || '').toLowerCase() === 'paid'" class="payment-success-msg">
+            Payment Done
+          </div>
+          <button *ngIf="r.status.toLowerCase() === 'checkedout' && (r.paymentStatus || '').toLowerCase() !== 'paid'"
+            class="btn-pay" (click)="openPaymentModal(r.reservationId)">
+            Pay Bill
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && list.length === 0" class="empty-state">
+      <span class="iconify" data-icon="mdi:calendar-blank-outline"></span>
+      <h3>No reservations found</h3>
+      <p>You haven't booked any rooms yet.</p>
+      <a routerLink="/guest/search" class="btn-primary">Book a Room</a>
+    </div>
+
+    <div class="modal-overlay" *ngIf="showPaymentModal" (click)="closePaymentModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>{{ paymentSuccess ? 'Invoice & Receipt' : 'Payment Details' }}</h3>
+          <button class="close-btn" (click)="closePaymentModal()">×</button>
+        </div>
+
+        <div class="modal-body" *ngIf="selectedInvoice">
+          <div class="success-banner" *ngIf="paymentSuccess">
+            <span class="iconify" data-icon="mdi:check-circle"></span>
+            <div>
+              <h4>Payment Successful!</h4>
+              <p>Thank you for your stay.</p>
+            </div>
+          </div>
+
+          <div class="invoice-details">
+            <div class="invoice-row">
+              <span>Guest Name:</span>
+              <strong>{{selectedInvoice.guestName}}</strong>
+            </div>
+            <div class="invoice-row">
+              <span>Stay:</span>
+              <span>{{selectedInvoice.checkIn}} to {{selectedInvoice.checkOut}}</span>
+            </div>
+          </div>
+
+          <table class="invoice-table">
+            <thead>
+              <tr>
+                <th>Room</th>
+                <th>Type</th>
+                <th>Rate</th>
+                <th>Nights</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of selectedInvoice.rooms">
+                <td>{{item.roomNumber}}</td>
+                <td>{{item.roomType}}</td>
+                <td>₹{{item.pricePerNight}}</td>
+                <td>{{item.nights}}</td>
+                <td>₹{{item.total | number:'1.2-2'}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="invoice-summary">
+            <div class="summary-row">
+              <span>Room Total</span>
+              <span>₹{{selectedInvoice.roomTotal | number:'1.2-2'}}</span>
+            </div>
+            <div class="summary-row">
+              <span>Additional Charges</span>
+              <span>₹{{ (selectedInvoice.breakageFee + selectedInvoice.serviceCharges) | number:'1.2-2' }}</span>
+            </div>
+            <div class="summary-row subtotal">
+              <span>Subtotal</span>
+              <span>₹{{selectedInvoice.subTotal | number:'1.2-2'}}</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (5%)</span>
+              <span>₹{{selectedInvoice.taxAmount | number:'1.2-2'}}</span>
+            </div>
+            <div class="summary-row grand-total">
+              <span>Grand Total</span>
+              <span>₹{{selectedInvoice.grandTotal | number:'1.2-2'}}</span>
+            </div>
+          </div>
+          <div class="payment-actions-container" *ngIf="!paymentSuccess && selectedInvoice.paymentStatus !== 'Paid'">
+
+            <div class="payment-mode-section">
+              <label for="pMode">Payment Mode:</label>
+              <select id="pMode" [(ngModel)]="paymentMode" class="form-select">
+                <option value="Card">Credit/Debit Card</option>
+                <option value="UPI">UPI / GPay</option>
+                <option value="Cash">Cash</option>
+              </select>
+            </div>
+
+            <div class="payment-actions">
+              <button class="btn-pay-confirm" (click)="pay()" [disabled]="paymentProcessing">
+                {{ paymentProcessing ? 'Processing...' : 'Confirm & Pay' }}
+              </button>
+            </div>
+          </div>
+
+          <div class="payment-actions" *ngIf="selectedInvoice.paymentStatus === 'Paid'">
+            <div class="paid-stamp">PAID</div>
+            <button class="btn-secondary" (click)="closePaymentModal()">Close</button>
+          </div>
+
+        </div>
+        <div class="modal-body" *ngIf="!selectedInvoice && paymentProcessing">
+          <div class="loading-spinner">Loading Invoice...</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

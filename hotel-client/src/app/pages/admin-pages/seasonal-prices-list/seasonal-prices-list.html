@@ -1,0 +1,67 @@
+<div class="page-header">
+  <div class="header-content">
+    <h1>Seasonal Pricing</h1>
+    <p>Configure special pricing for holidays and events</p>
+  </div>
+  <button routerLink="/admin/seasonal-prices/add" class="add-btn premium-add-btn">
+    <span class="iconify" data-icon="mdi:plus"></span>
+    Add Seasonal Price
+  </button>
+</div>
+
+<div class="filter-section">
+  <div class="search-box big-search">
+    <span class="iconify" data-icon="mdi:magnify"></span>
+    <input type="text" placeholder="Search pricing..." (keyup)="applyFilter($event)">
+  </div>
+</div>
+
+<div class="loading-state" *ngIf="loading">
+  <div class="spinner"></div>
+</div>
+
+<div class="grid-container fade-in" *ngIf="!loading && filteredPrices.length > 0">
+
+  <div class="card seasonal-card" *ngFor="let s of filteredPrices">
+
+    <div class="card-body">
+
+      <div class="badge-group">
+        <span class="badge room-type">{{ s.roomTypeName }}</span>
+      </div>
+
+      <h5>{{ s.hotelName }}</h5>
+
+      <div class="date-range">
+        <span class="iconify" data-icon="mdi:calendar-arrow-right"></span>
+        <span>{{ s.startDate | date:'mediumDate' }} — {{ s.endDate | date:'mediumDate' }}</span>
+      </div>
+
+      <div class="price-tag">
+        ₹ {{ s.pricePerNight }}
+        <span>/ night</span>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <button class="btn-icon btn-edit" [routerLink]="['/admin/seasonal-prices/edit', s.seasonalPriceId]">
+        <span class="iconify" data-icon="mdi:pencil-outline"></span>
+        Edit
+      </button>
+
+      <button class="btn-icon btn-delete" (click)="delete(s.seasonalPriceId!)">
+        <span class="iconify" data-icon="mdi:trash-can-outline"></span>
+        Delete
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="!loading && filteredPrices.length === 0" class="empty-state">
+  <span class="iconify" data-icon="mdi:calendar-blank-outline"></span>
+  <h3>No Seasonal Pricing Found</h3>
+  <p>Add special pricing rules for different seasons.</p>
+</div>

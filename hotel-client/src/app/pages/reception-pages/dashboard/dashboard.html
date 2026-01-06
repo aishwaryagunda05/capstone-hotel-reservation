@@ -1,0 +1,291 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-area">
+        <span class="iconify" data-icon="mdi:home-city"></span>
+        <span>EasyStay</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item" [class.active]="viewMode === 'dashboard'" (click)="toggleView('dashboard')">
+        <span class="iconify" data-icon="mdi:view-dashboard-outline"></span>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-item" [class.active]="viewMode === 'walkin'" (click)="toggleView('walkin')">
+        <span class="iconify" data-icon="mdi:account-plus-outline"></span>
+        <span>Walk-in Booking</span>
+      </button>
+
+      <button class="nav-item" [class.active]="viewMode === 'requests'" (click)="toggleView('requests')">
+        <span class="iconify" data-icon="mdi:bell-ring-outline"></span>
+        <span>Service Requests</span>
+      </button>
+
+      <button class="nav-item" [class.active]="viewMode === 'billings'" (click)="toggleView('billings')">
+        <span class="iconify" data-icon="mdi:receipt-text-outline"></span>
+        <span>Billings</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="dashboard-header">
+      <div class="header-left"></div>
+      <div class="header-title-center">
+        EasyStay Reservation System
+      </div>
+      <div class="header-right">
+        <button class="header-link" (click)="toggleView('dashboard')">
+          <span class="iconify" data-icon="mdi:home-outline"></span> Home
+        </button>
+        <button class="header-link" (click)="toggleProfile()">
+          <span class="iconify profile-icon" data-icon="mdi:account-circle-outline"></span>
+        </button>
+        <button class="header-link" (click)="logout()">
+          <span class="iconify" data-icon="mdi:logout-variant"></span> Logout
+        </button>
+      </div>
+    </header>
+    <div class="profile-card" *ngIf="showProfile">
+      <h3 class="profile-title">Your Profile</h3>
+
+      <div class="profile-info-row">
+        <span class="label">Name:</span>
+        <span class="value">{{ currentUser.fullName || 'Receptionist' }}</span>
+      </div>
+
+      <div class="profile-info-row">
+        <span class="label">Role:</span>
+        <span class="value">Receptionist</span>
+      </div>
+
+      <button class="btn-edit-details" (click)="goToProfile()">
+        <span class="iconify" data-icon="mdi:pencil-outline"></span> Edit Details
+      </button>
+    </div>
+    <div class="content-wrapper">
+      <div *ngIf="viewMode === 'dashboard'">
+        <div class="page-title-section">
+        </div>
+
+        <div *ngIf="loading && !pendingCheckins.length" class="empty-state">Loading reservations...</div>
+        <div class="section-card" *ngIf="pendingCheckins.length > 0">
+          <div class="section-header">
+            <h2>About to Check-in</h2>
+          </div>
+          <div class="reservations-list">
+            <div class="reservation-card" *ngFor="let r of pendingCheckins">
+              <div class="info">
+                <h4>{{ r.guestName }} - <span style="font-weight:normal">Room(s): {{ r.roomNumbers }}</span></h4>
+                <p>{{ r.checkIn | date:'mediumDate' }} - {{ r.checkOut | date:'mediumDate' }} | ₹{{ r.totalAmount }}</p>
+              </div>
+              <div class="actions">
+                <button class="btn-checkin" style="margin-left:1rem;" (click)="checkIn(r.reservationId)">Check
+                  In</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="section-header">
+            <h2>In-House Guests</h2>
+          </div>
+          <div class="reservations-list">
+            <div class="reservation-card" *ngFor="let r of activeCheckins">
+              <div class="info">
+                <h4>{{ r.guestName }} - Room(s): {{ r.roomNumbers }}</h4>
+                <p>Checking out: {{ r.checkOut | date:'mediumDate' }}</p>
+              </div>
+              <button class="btn-checkout" (click)="checkOut(r.reservationId)">Check Out</button>
+            </div>
+            <div *ngIf="activeCheckins.length === 0" class="empty-state">No active guests.</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="viewMode === 'walkin'">
+        <div class="page-title-section">
+          <h2>Walk-in Booking</h2>
+        </div>
+        <div class="section-card" *ngIf="walkInStep === 'register'">
+          <div class="section-header">
+            <h2>Guest Registration</h2>
+          </div>
+          <div style="padding: 2rem;">
+            <form [formGroup]="guestForm" class="form-container">
+              <div class="form-group">
+                <label>Full Name <span style="color:red">*</span></label>
+                <input type="text" formControlName="fullName" placeholder="John Doe">
+                <div *ngIf="submitted && f['fullName'].errors" class="error-msg"
+                  style="color:red; font-size:0.8rem; margin-top:4px;">
+                  <span *ngIf="f['fullName'].errors['required']">Full Name is required</span>
+                  <span *ngIf="f['fullName'].errors['minlength']">Must be at least 5 chars</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email <span style="color:red">*</span></label>
+                <input type="email" formControlName="email">
+                <div *ngIf="submitted && f['email'].errors" class="error-msg"
+                  style="color:red; font-size:0.8rem; margin-top:4px;">
+                  <span *ngIf="f['email'].errors['required']">Email is required</span>
+                  <span *ngIf="f['email'].errors['email']">Invalid email format</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone <span style="color:red">*</span></label>
+                <input type="text" formControlName="phone">
+                <div *ngIf="submitted && f['phone'].errors" class="error-msg"
+                  style="color:red; font-size:0.8rem; margin-top:4px;">
+                  <span *ngIf="f['phone'].errors['required']">Phone is required</span>
+                  <span *ngIf="f['phone'].errors['pattern']">Must be 10 digits</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Password <span style="color:red">*</span></label>
+                <input type="password" formControlName="password">
+                <div *ngIf="submitted && f['password'].errors" class="error-msg"
+                  style="color:red; font-size:0.8rem; margin-top:4px;">
+                  <span *ngIf="f['password'].errors['required']">Password is required</span>
+                  <span *ngIf="f['password'].errors['minlength']">Min 6 chars</span>
+                  <span *ngIf="f['password'].errors['pattern']">Needs Uppercase, Lowercase, Number, Symbol</span>
+                </div>
+              </div>
+              <button class="btn-action" style="background:#1f2041; color:white; padding:1rem;"
+                (click)="registerGuest()">Next Step</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="section-card" *ngIf="walkInStep === 'search'">
+          <div class="section-header">
+            <h2>Search Rooms</h2>
+          </div>
+          <div style="padding:2rem;">
+            <div class="form-container">
+              <div class="form-group">
+                <label>Check-in <span style="color:red">*</span></label>
+                <input type="date" [(ngModel)]="searchForm.checkInDate">
+              </div>
+              <div class="form-group">
+                <label>Check-out <span style="color:red">*</span></label>
+                <input type="date" [(ngModel)]="searchForm.checkOutDate">
+              </div>
+              <button class="btn-action" (click)="searchRooms()">Search Availability</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" *ngIf="walkInStep === 'rooms'">
+          <div class="section-header">
+            <h2>Available Rooms</h2>
+            <button class="btn-action" style="font-size:0.8rem; background: #64748b;" (click)="walkInStep='search'">
+              <span class="iconify" data-icon="mdi:arrow-left"></span> Back to Search
+            </button>
+          </div>
+
+          <!-- Content -->
+          <div *ngIf="availableRooms.length > 0">
+            <div class="rooms-grid">
+              <div *ngFor="let room of availableRooms" class="room-card-selectable"
+                [class.selected]="selectedRoomIds.includes(room.roomId)" (click)="toggleRoomSelection(room.roomId)">
+                <div class="room-number">{{ room.roomNumber }}</div>
+                <div class="room-type">{{ room.roomType }}</div>
+                <div class="room-price">₹{{ room.price }}</div>
+
+                <!-- Optional Checkmark Icon if selected -->
+                <div *ngIf="selectedRoomIds.includes(room.roomId)"
+                  style="position:absolute; top:8px; right:8px; color:#22c55e;">
+                  <span class="iconify" data-icon="mdi:check-circle" style="font-size:1.2rem;"></span>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:1.5rem; border-top:1px solid #eee; background:#f8fafc;">
+              <button class="btn-checkin" style="width:100%; padding:1rem; font-size:1.1rem; font-weight:700;"
+                [disabled]="selectedRoomIds.length===0" (click)="confirmWalkInBooking()">
+                Confirm Booking ({{ selectedRoomIds.length }})
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div *ngIf="availableRooms.length === 0" class="no-data-premium">
+            <div class="no-data-icon">
+              <span class="iconify" data-icon="mdi:calendar-alert"></span>
+            </div>
+            <h3 class="no-data-title">No Rooms Available</h3>
+            <p class="no-data-sub">We couldn't find any rooms matching your criteria for these dates.</p>
+            <button class="btn-action" style="margin-top:1rem;" (click)="walkInStep='search'">Modify Search</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="viewMode === 'requests'">
+        <div class="page-title-section">
+          <h2>Room Service Requests</h2>
+        </div>
+        <app-reception-service-requests *ngIf="assignedHotelId"
+          [hotelId]="assignedHotelId"></app-reception-service-requests>
+      </div>
+      <div *ngIf="viewMode === 'billings'">
+        <div class="page-title-section">
+          <h2>Billing History and Receipts</h2>
+        </div>
+
+        <div class="section-card">
+          <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #f1f5f9;">
+            <input matInput (keyup)="applyBillingFilter($event)" placeholder="Search All Records..."
+              style="width: 100%; padding: 0.8rem; border: 1px solid #e2e8f0; border-radius: 6px;">
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table mat-table [dataSource]="billingsDataSource" matSort #billingSort="matSort" class="table-premium">
+              <ng-container matColumnDef="hotelName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Hotel </th>
+                <td mat-cell *matCellDef="let row"> {{row.hotelName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="guestName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Guest </th>
+                <td mat-cell *matCellDef="let row"> {{row.guestName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="roomNumber">
+                <th mat-header-cell *matHeaderCellDef> Room Checks </th>
+                <td mat-cell *matCellDef="let row"> {{row.roomNumbers}} </td>
+              </ng-container>
+              <ng-container matColumnDef="totalAmount">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Price </th>
+                <td mat-cell *matCellDef="let row" style="font-weight:bold;"> ₹{{row.totalAmount}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row">
+                  <span class="badge" [class]="row.status.toLowerCase()">{{row.status}}</span>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="paymentStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Payment </th>
+                <td mat-cell *matCellDef="let row">
+                  <span class="badge"
+                    [class]="row.paymentStatus.toLowerCase() === 'paid' ? 'paid' : 'pending'">{{row.paymentStatus}}</span>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="billingColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: billingColumns;"></tr>
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6" style="text-align:center; padding: 2rem;">No data matching the
+                  filter.
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <mat-paginator #billingPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

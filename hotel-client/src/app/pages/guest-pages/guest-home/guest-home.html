@@ -1,0 +1,48 @@
+<div class="home-container page-container">
+    <div class="header">
+        <h3>Billing history and receipts</h3>
+    </div>
+
+    <div *ngIf="loading" class="loading-state">
+        Loading Invoices...
+    </div>
+
+    <div *ngIf="!loading && invoices.length === 0" class="empty-state">
+        <span class="iconify" data-icon="mdi:receipt-text-outline"></span>
+        <h3>No Invoices Found</h3>
+        <p>You haven't made any payments yet.</p>
+        <a routerLink="/guest/reservations" class="btn-link">Go to Reservations</a>
+    </div>
+
+    <div *ngIf="!loading && invoices.length > 0" class="table-card">
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hotel</th>
+                        <th>Room(s)</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let inv of invoices">
+                        <td class="hotel-name">{{ inv.hotelName }}</td>
+                        <td>{{ inv.roomNumbers.join(', ') }}</td>
+                        <td>{{ inv.invoiceDate | date:'mediumDate' }}</td>
+                        <td class="amount">{{ inv.grandTotal | currency:'INR' }}</td>
+                        <td>
+                            <span class="badge" [ngClass]="{
+                                'paid': inv.paymentStatus === 'Paid',
+                                'pending': inv.paymentStatus === 'Pending'
+                            }">
+                                {{ inv.paymentStatus }}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

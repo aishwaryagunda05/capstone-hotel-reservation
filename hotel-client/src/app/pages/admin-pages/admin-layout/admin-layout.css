@@ -1,0 +1,225 @@
+:host {
+  display: block;
+  height: 100vh;
+  /* Use global font family */
+  --sidebar-width: 270px;
+  /* Slightly wider for modern look */
+}
+
+.admin-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-main);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+  border-right: 1px solid var(--slate-200);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.sidebar-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--slate-700);
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.sidebar-header h2 span {
+  color: var(--primary-400);
+}
+
+/* Nav */
+.sidebar-nav {
+  flex: 1;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  color: var(--slate-400);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sidebar-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.sidebar-nav a.active {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 100%);
+  color: var(--primary-400);
+  border-left: 4px solid var(--primary-500);
+  border-radius: 4px var(--radius-md) var(--radius-md) 4px;
+}
+
+.sidebar-nav .iconify {
+  font-size: 1.4rem;
+  min-width: 24px;
+  margin-right: 16px;
+  transition: transform 0.2s, color 0.2s;
+  opacity: 0.7;
+  pointer-events: none;
+
+}
+
+.sidebar-nav a:hover .iconify,
+.sidebar-nav a.active .iconify {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.sidebar-nav .text {
+  margin-left: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav .text {
+  margin-left: 0;
+}
+
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid var(--slate-700);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid var(--slate-600);
+  background: transparent;
+  border-radius: var(--radius-md);
+  color: var(--slate-400);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border-color: var(--danger);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  transform: translateY(-2px);
+}
+
+.logout-btn .text {
+  margin-left: 10px;
+}
+
+.logout-btn .iconify {
+  font-size: 1.2rem;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 16px;
+  z-index: 1000;
+  background: var(--primary-600);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 45;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .admin-container.sidebar-open .sidebar-overlay {
+    display: block;
+  }
+
+  .main-content {
+    padding: 16px;
+    padding-top: 60px;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -270px;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
+
+  .admin-container.sidebar-open .sidebar {
+    left: 0 !important;
+  }
+}

@@ -1,0 +1,66 @@
+<div class="layout-container" [class.sidebar-collapsed]="isCollapsed" [class.sidebar-open]="!isCollapsed">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-area">
+            <span class="iconify logo-icon" data-icon="mdi:home-city"></span>
+            <span>EasyStay</span>
+        </div>
+        <button class="toggle-btn" (click)="toggleSidebar()">
+            <span class="iconify" data-icon="mdi:menu"></span>
+        </button>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-area" *ngIf="!isCollapsed">
+                <span class="iconify logo-icon" data-icon="mdi:home-city"></span>
+                <span class="logo-text">EasyStay</span>
+            </div>
+            <button class="toggle-btn" (click)="toggleSidebar()">
+                <span class="iconify" [attr.data-icon]="isCollapsed ? 'mdi:menu' : 'mdi:chevron-left'"></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a routerLink="/guest/home" routerLinkActive="active" class="nav-item">
+                <span class="iconify" data-icon="mdi:home"></span>
+                <span class="label" *ngIf="!isCollapsed">Billings</span>
+            </a>
+
+            <a routerLink="/guest/search" [class.active]="isBookingActive()" class="nav-item">
+                <span class="iconify" data-icon="mdi:magnify"></span>
+                <span class="label" *ngIf="!isCollapsed">Book Now</span>
+            </a>
+
+            <a routerLink="/guest/reservations" routerLinkActive="active" class="nav-item">
+                <span class="iconify" data-icon="mdi:calendar-check"></span>
+                <span class="label" *ngIf="!isCollapsed">My Reservations</span>
+            </a>
+
+            <a routerLink="/guest/room-service" routerLinkActive="active" class="nav-item">
+                <span class="iconify" data-icon="mdi:bell-ring-outline"></span>
+                <span class="label" *ngIf="!isCollapsed">Room Service</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="footer-actions">
+
+
+                <button (click)="logout()" class="nav-item logout-btn" title="Logout">
+                    <span class="iconify" data-icon="mdi:logout"></span>
+                    <span class="label" *ngIf="!isCollapsed">Logout</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

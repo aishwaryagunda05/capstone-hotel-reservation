@@ -1,0 +1,81 @@
+<div class="page-container">
+  <div class="page-header">
+    <div class="header-content">
+      <h1>Manage Hotels</h1>
+      <p>View and manage all hotel properties</p>
+    </div>
+    <button class="add-btn premium-add-btn" (click)="addHotel()">
+      <span class="iconify" data-icon="mdi:plus"></span>
+      Add New Hotel
+    </button>
+  </div>
+
+  <!-- Search & Filter -->
+  <div class="filter-section">
+    <div class="search-box big-search">
+      <span class="iconify" data-icon="mdi:magnify"></span>
+      <input type="text" placeholder="Search hotels..." (keyup)="applyFilter($event)">
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!loading && pagedHotels.length === 0">
+    <span class="iconify" data-icon="mdi:office-building-outline"></span>
+    <h3>No Hotels Found</h3>
+    <p>Get started by adding your first hotel to the system.</p>
+  </div>
+
+  <!-- Premium Hotels Grid -->
+  <div class="hotels-grid fade-in grid-cols-2 md-cols-1 sm-cols-1" *ngIf="!loading && pagedHotels.length > 0">
+    <div class="hotel-card" *ngFor="let hotel of pagedHotels">
+
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="hotel-name">{{ hotel.hotelName }}</h3>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="iconify" data-icon="mdi:map-marker-radius-outline"></span>
+            <span>{{ hotel.city }}, {{ hotel.state }} - {{ hotel.pincode }}</span>
+          </div>
+
+          <div class="info-item" *ngIf="hotel.address">
+            <span class="iconify" data-icon="mdi:map-marker"></span>
+            <span>{{ hotel.address }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="iconify" data-icon="mdi:phone"></span>
+            <span>{{ hotel.phone }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="iconify" data-icon="mdi:email"></span>
+            <span>{{ hotel.email }}</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn-icon edit" (click)="editHotel(hotel.hotelId!)" title="Edit Hotel">
+            <span class="iconify" data-icon="mdi:square-edit-outline"></span> Edit
+          </button>
+          <button class="btn-icon delete" (click)="deleteHotel(hotel.hotelId!)" title="Delete Hotel">
+            <span class="iconify" data-icon="mdi:trash-can-outline"></span> Delete
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <mat-paginator [length]="allHotels.length" [pageSize]="pageSize" [pageSizeOptions]="[6, 12, 18]"
+    (page)="onPageChange($event)" *ngIf="!loading && allHotels.length > 0">
+  </mat-paginator>
+</div>

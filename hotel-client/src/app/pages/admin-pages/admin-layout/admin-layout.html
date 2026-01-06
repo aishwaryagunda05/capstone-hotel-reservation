@@ -1,0 +1,63 @@
+<div class="admin-container" [class.sidebar-open]="isOpen">
+  <button class="menu-toggle" (click)="toggleSidebar()">
+    <span class="iconify" [attr.data-icon]="isOpen ? 'mdi:close' : 'mdi:menu'"></span>
+  </button>
+
+  <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+  <aside class="sidebar" [class.open]="isOpen">
+    <div class="sidebar-header">
+      <h2>Admin<span>Panel</span></h2>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a routerLink="/admin/hotels" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:office-building-star-outline"></span>
+            <span class="text">Hotels</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/users" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:account-group-outline"></span>
+            <span class="text">Users</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/roomtypes" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:bed-king-outline"></span>
+            <span class="text">Room Categories</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/admin/rooms" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:door-sliding-lock"></span>
+            <span class="text">Rooms</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin/seasonal-prices" routerLinkActive="active" class="nav-link">
+            <span class="iconify" data-icon="mdi:calendar-clock-outline"></span>
+            <span class="text">Seasonal Prices</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/assignments" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:account-key-outline"></span>
+            <span class="text">Assign Users to Hotels</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

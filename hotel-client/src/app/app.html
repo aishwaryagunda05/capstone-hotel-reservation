@@ -1,0 +1,17 @@
+<!-- GLOBAL LAYOUT -->
+
+<!-- NAVBAR ALWAYS VISIBLE -->
+<!-- NAVBAR ALWAYS VISIBLE -->
+<app-navbar *ngIf="showNavbar"></app-navbar>
+
+<!-- MAIN CONTENT AREA -->
+<div class="main-content">
+
+  <!-- This loads pages like Home, Login, Register, Dashboards -->
+  <router-outlet></router-outlet>
+
+  <!-- GLOBAL API LOADER OVERLAY -->
+  <div *ngIf="loadingService.loading()" class="global-loader-overlay">
+    <div class="loader-spinner"></div>
+  </div>
+</div>

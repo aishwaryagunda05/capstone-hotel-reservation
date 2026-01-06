@@ -1,0 +1,219 @@
+:host {
+    display: block;
+    height: 100vh;
+    --sidebar-width: 270px;
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f8fafc;
+    /* var(--bg-main) fallback */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.sidebar-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.sidebar-header h2 span {
+    color: #818cf8;
+    /* var(--primary-400) */
+}
+
+/* Nav */
+.sidebar-nav {
+    flex: 1;
+    padding: 24px 16px;
+    overflow-y: auto;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    color: #94a3b8;
+    /* var(--slate-400) */
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.sidebar-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.sidebar-nav a.active {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 100%);
+    color: #818cf8;
+    border-left: 4px solid #6366f1;
+    /* var(--primary-500) */
+}
+
+.sidebar-nav .iconify {
+    font-size: 1.4rem;
+    min-width: 24px;
+    margin-right: 16px;
+    transition: transform 0.2s;
+    opacity: 0.7;
+}
+
+.sidebar-nav a:hover .iconify,
+.sidebar-nav a.active .iconify {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.sidebar-nav a.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Footer */
+.sidebar-footer {
+    padding: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.3);
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid #475569;
+    background: transparent;
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    /* var(--danger) */
+    border-color: #ef4444;
+}
+
+.logout-btn .text {
+    margin-left: 10px;
+}
+
+.logout-btn .iconify {
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+/* Responsive */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 16px;
+    z-index: 1000;
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 45;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .admin-container.sidebar-open .sidebar-overlay {
+        display: block;
+    }
+
+    .main-content {
+        padding: 16px;
+        padding-top: 60px;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -270px;
+        height: 100vh;
+    }
+
+    .admin-container.sidebar-open .sidebar {
+        left: 0 !important;
+    }
+}

@@ -1,0 +1,127 @@
+/* Page Container */
+.page {
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.page h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 30px;
+}
+
+/* Back Button */
+.back {
+    align-self: flex-start;
+    margin-left: 10%;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    color: #666;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.back:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* Confirmation Card */
+.confirm-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f2f6;
+    font-size: 1.1rem;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item strong {
+    color: #2d3436;
+}
+
+.total {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0984e3;
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Room List */
+.room-list {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.room-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.room-list li {
+    margin-bottom: 5px;
+    color: #636e72;
+}
+
+/* Action Button */
+.actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.btn-confirm {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-confirm:hover {
+    background: #00cec9;
+    transform: translateY(-2px);
+}
+
+.btn-confirm:disabled {
+    background: #b2bec3;
+    cursor: not-allowed;
+}
+
+/* Success Message */
+.success-msg {
+    background: #dff9fb;
+    color: #009432;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #badc58;
+}

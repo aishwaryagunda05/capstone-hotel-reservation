@@ -1,0 +1,81 @@
+<div class="page-center">
+  <div class="card-premium">
+
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2 text-muted">Loading form information...</p>
+    </div>
+
+    <div *ngIf="!loading">
+      <h2>{{ title }}</h2>
+
+      <form (ngSubmit)="save()">
+
+        <!-- HOTEL -->
+        <div class="form-group">
+          <label>Hotel <span class="text-danger">*</span></label>
+          <select class="input-premium form-select" [(ngModel)]="model.hotelId" (change)="onHotelChange(model.hotelId)"
+            name="hotelId" required>
+            <option value="0" disabled>Select hotel</option>
+            <option *ngFor="let h of hotels" [value]="h.hotelId">
+              {{ h.hotelName }}
+            </option>
+          </select>
+        </div>
+
+        <!-- ROOM TYPE -->
+        <div class="form-group">
+          <label>Room Category <span class="text-danger">*</span></label>
+          <select class="input-premium form-select" [(ngModel)]="model.roomTypeId" name="roomTypeId"
+            [disabled]="!model.hotelId || model.hotelId == 0" required>
+            <option value="0" disabled>{{ model.hotelId && model.hotelId != 0 ? 'Select category' : 'Select a hotel
+              first' }}</option>
+            <option *ngFor="let r of filteredRoomTypes" [value]="r.roomTypeId">
+              {{ r.roomTypeName }} — Base: ₹{{ r.basePrice }}
+            </option>
+          </select>
+          <div *ngIf="model.hotelId && model.hotelId != 0 && filteredRoomTypes.length === 0"
+            class="text-danger small mt-1">
+            No room categories found for this hotel.
+          </div>
+        </div>
+
+        <!-- DATES ROW -->
+        <div class="row">
+          <div class="form-group">
+            <label>Effective From <span class="text-danger">*</span></label>
+            <input type="date" class="input-premium" [(ngModel)]="model.startDate" name="startDate" required>
+          </div>
+
+          <div class="form-group">
+            <label>Effective Until <span class="text-danger">*</span></label>
+            <input type="date" class="input-premium" [(ngModel)]="model.endDate" name="endDate" required>
+          </div>
+        </div>
+
+        <!-- PRICE -->
+        <div class="form-group">
+          <label>Seasonal Price Per Night (₹) <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text">₹</span>
+            <input type="number" class="input-premium" [(ngModel)]="model.pricePerNight" name="pricePerNight" required
+              placeholder="0.00">
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="actions">
+          <button class="btn-outline" routerLink="/admin/seasonal-prices" type="button">
+            Cancel
+          </button>
+          <button class="btn-gradient" type="submit">
+            {{ isEdit ? 'Update Price' : 'Save Price' }}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

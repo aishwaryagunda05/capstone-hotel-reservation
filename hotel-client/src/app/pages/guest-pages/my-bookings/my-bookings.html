@@ -1,0 +1,35 @@
+<div class="page">
+    <h2>My Reservations</h2>
+
+    <div *ngIf="loading" class="loading">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+    <div *ngIf="!loading && bookings.length > 0" class="bookings-grid">
+        <div class="booking-card" *ngFor="let b of bookings">
+            <div class="card-header">
+                <h3>Reservation Details</h3>
+                <span class="status-badge" [ngClass]="b.status?.toLowerCase()">{{b.status}}</span>
+            </div>
+            <div class="card-body">
+                <p><strong>Hotel:</strong> {{b.hotelName || 'My Hotel'}}</p>
+                <p><strong>Guest:</strong> {{b.guestName}}</p>
+                <p><strong>Room:</strong> {{b.rooms[0]?.roomNumber}} ({{b.rooms[0]?.roomType}})</p>
+                <p><strong>Check-in:</strong> {{b.checkIn}}</p>
+                <p><strong>Check-out:</strong> {{b.checkOut}}</p>
+                <p class="total">Total: ₹{{b.totalAmount}}</p>
+            </div>
+            <div class="card-actions">
+                <button *ngIf="b.status.toLowerCase() === 'booked' || b.status.toLowerCase() === 'confirmed'"
+                    class="btn-cancel" (click)="cancel(b.reservationId)">
+                    Cancel Booking
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!loading && bookings.length === 0" class="empty-state">
+        <p>You have no reservations yet.</p>
+        <a routerLink="/search" class="btn-link">Book a Room Now</a>
+    </div>
+</div>

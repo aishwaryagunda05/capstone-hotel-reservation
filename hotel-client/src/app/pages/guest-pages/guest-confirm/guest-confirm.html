@@ -1,0 +1,42 @@
+<div class="page">
+  <button class="back" (click)="goBack()">⬅ Back to Rooms</button>
+  <h2>Confirm Booking</h2>
+
+  <div class="confirm-card" *ngIf="data">
+
+    <div class="summary-item">
+      <span>Status:</span>
+      <span class="status-badge pending">Pending Confirmation</span>
+    </div>
+
+    <div class="summary-item">
+      <span>Check-in:</span>
+      <strong>{{data.checkIn | date:'mediumDate'}}</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Check-out:</span>
+      <strong>{{data.checkOut | date:'mediumDate'}}</strong>
+    </div>
+
+    <div class="room-list">
+      <h4>Selected Rooms ({{data.rooms.length}})</h4>
+      <ul>
+        <li *ngFor="let r of data.selectedRoomDetails">
+          Room {{r.roomNumber}} ({{r.roomType}}) - ₹{{r.totalPrice}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="total">
+      Total Payable: ₹ {{data.totalAmount}}
+    </div>
+
+    <div class="actions">
+      <button class="btn-confirm" (click)="goToBookings()">
+        Go to My Bookings
+      </button>
+    </div>
+
+  </div>
+</div>

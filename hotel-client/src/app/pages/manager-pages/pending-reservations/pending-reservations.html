@@ -1,0 +1,58 @@
+<div class="page page-container">
+  <h2>Pending Reservations</h2>
+
+  <div *ngIf="loading" class="loading">Loading reservations...</div>
+
+  <div *ngIf="!loading && list.length > 0" class="cards-grid grid-cols-3 md-cols-2 sm-cols-1">
+    <div *ngFor="let r of list" class="reservation-card">
+      <div class="card-header">
+        <div class="hotel-info">
+          <span class="iconify hotel-icon" data-icon="mdi:domain"></span>
+          <span class="hotel-name">{{r.hotel}}</span>
+        </div>
+        <span class="badge booked">{{r.status}}</span>
+      </div>
+
+      <div class="card-body">
+        <div class="info-row">
+          <span class="iconify" data-icon="mdi:account"></span>
+          <div>
+            <strong>{{r.guest}}</strong>
+            <div class="email-text">{{r.email}}</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="iconify" data-icon="mdi:calendar-range"></span>
+          <span>{{r.checkIn | date:'mediumDate'}} — {{r.checkOut | date:'mediumDate'}}</span>
+        </div>
+
+        <div class="rooms-list">
+          <div *ngFor="let rm of r.rooms" class="room-item">
+            <span class="room-number">Room {{rm.roomNumber}}</span>
+            <span class="room-price">₹{{rm.pricePerNight}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-confirm" (click)="approve(r.reservationId)">
+          <span class="iconify" data-icon="mdi:check-circle-outline"></span>
+          Confirm
+        </button>
+        <button class="btn btn-reject" (click)="reject(r.reservationId)">
+          <span class="iconify" data-icon="mdi:close-circle-outline"></span>
+          Reject
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && list.length===0" class="empty">
+    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--slate-300);">
+      <span class="iconify" data-icon="mdi:checkbox-multiple-marked-circle-outline"></span>
+    </div>
+    No pending reservations found for this hotel.
+  </div>
+
+</div>

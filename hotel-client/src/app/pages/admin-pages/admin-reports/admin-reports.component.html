@@ -1,0 +1,127 @@
+<div class="reports-container">
+    <div class="page-header">
+        <div class="header-text">
+            <h2>Administrative Reports</h2>
+            <p>Real-time analytics and performance metrics for all hotels</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn-refresh" (click)="loadData()">
+                <span class="refresh-icon">🔄</span> Refresh Data
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid" *ngIf="stats">
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">TOTAL HOTELS</span>
+                <h3>{{ stats.totalHotels }}</h3>
+            </div>
+            <span class="icon" style="background: #dbeafe; color: #2563eb;">🏨</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">TOTAL REVENUE</span>
+                <h3>{{ stats.totalRevenue | currency:'INR' }}</h3>
+            </div>
+            <span class="icon" style="background: #ecfccb; color: #65a30d;">💰</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">OCCUPANCY RATE</span>
+                <h3>{{ stats.occupancyRate }}%</h3>
+            </div>
+            <span class="icon" style="background: #fef3c7; color: #d97706;">📈</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">ACTIVE GUESTS</span>
+                <h3>{{ stats.activeGuests }}</h3>
+            </div>
+            <span class="icon" style="background: #ccfbf1; color: #0f766e;">🔑</span>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="charts-grid">
+        <!-- Revenue Trend SVG Chart -->
+        <div class="chart-card">
+            <h3>Revenue Trend (6 Months)</h3>
+            <div class="chart-container line-chart">
+                <div *ngIf="revenueData.length === 0" class="no-data">
+                    <p>No revenue data available yet.</p>
+                </div>
+
+                <div class="svg-wrapper" *ngIf="revenueData.length > 0">
+                    <svg [attr.viewBox]="'0 0 ' + viewWidth + ' ' + viewHeight" class="revenue-chart">
+                        <line x1="40" y1="260" x2="560" y2="260" stroke="#e2e8f0" />
+                        <line x1="40" y1="150" x2="560" y2="150" stroke="#e2e8f0" stroke-dasharray="4" />
+                        <line x1="40" y1="40" x2="560" y2="40" stroke="#e2e8f0" stroke-dasharray="4" />
+                        <path [attr.d]="areaPath" fill="rgba(59, 130, 246, 0.1)" />
+                        <path [attr.d]="linePath" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <div class="chart-labels">
+                        <span *ngFor="let item of revenueData">{{ item.month.split(' ')[0] }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation Activity (Last 30 Days) -->
+        <div class="chart-card">
+            <h3>Reservation Bookings (Last 30 Days)</h3>
+            <div class="chart-container line-chart">
+                <div *ngIf="summaryData.length === 0" class="no-data">
+                    <p>No activity in the last 30 days.</p>
+                </div>
+                <div class="svg-wrapper" *ngIf="summaryData.length > 0">
+                    <svg [attr.viewBox]="'0 0 ' + viewWidth + ' ' + viewHeight" class="activity-chart">
+                        <line x1="40" y1="260" x2="560" y2="260" stroke="#e2e8f0" />
+                        <path [attr.d]="summaryAreaPath" fill="rgba(16, 185, 129, 0.1)" />
+                        <path [attr.d]="summaryLinePath" fill="none" stroke="#10b981" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="chart-labels">
+                        <span>30d ago</span>
+                        <span>Today</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Occupancy Table -->
+    <div class="table-card">
+        <h3>Hotel Occupancy Breakdown</h3>
+        <div class="table-responsive">
+            <table class="table-premium">
+                <thead>
+                    <tr>
+                        <th>Hotel Name</th>
+                        <th>Total Rooms</th>
+                        <th>Occupied Rooms</th>
+                        <th>Occupancy %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let h of occupancyData">
+                        <td>{{ h.hotelName }}</td>
+                        <td>{{ h.totalRooms }}</td>
+                        <td>{{ h.occupiedRooms }}</td>
+                        <td>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar" [style.width.%]="h.occupancyRate"></div>
+                                <span>{{ h.occupancyRate | number:'1.0-1' }}%</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

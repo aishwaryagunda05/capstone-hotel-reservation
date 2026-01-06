@@ -1,0 +1,1 @@
+﻿UPDATE Rooms SET IsActive = 1;

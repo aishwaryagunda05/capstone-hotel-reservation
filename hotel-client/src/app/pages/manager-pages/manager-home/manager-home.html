@@ -1,0 +1,42 @@
+<div class="page page-container">
+  <h2>Manager Dashboard</h2>
+  <p class="subtitle">Welcome back. Manage your hotel reservations and operations.</p>
+
+  <div class="dashboard-grid grid-cols-2 md-cols-2 sm-cols-1">
+    <div class="card action-card" (click)="goToPending()">
+      <div class="icon-box">
+        <span class="iconify" data-icon="mdi:clipboard-clock-outline"></span>
+      </div>
+      <h3>Pending Reservations</h3>
+      <p>View and approve new booking requests</p>
+      <button class="btn-link">View Requests &rarr;</button>
+    </div>
+
+    <div class="card action-card" (click)="goToRooms()">
+      <div class="icon-box">
+        <span class="iconify" data-icon="mdi:door-open"></span>
+      </div>
+      <h3>Manage Rooms</h3>
+      <p>Update room availability and pricing</p>
+      <button class="btn-link">Manage Rooms &rarr;</button>
+    </div>
+
+    <div class="card action-card" (click)="goToReports()">
+      <div class="icon-box">
+        <span class="iconify" data-icon="mdi:chart-bar"></span>
+      </div>
+      <h3>Hotel Reports</h3>
+      <p>Analyze performance & metrics</p>
+      <button class="btn-link">View Stats &rarr;</button>
+    </div>
+
+    <div class="card action-card" (click)="goToReservations()">
+      <div class="icon-box">
+        <span class="iconify" data-icon="mdi:format-list-bulleted"></span>
+      </div>
+      <h3>All Reservations</h3>
+      <p>View complete booking history</p>
+      <button class="btn-link">View All &rarr;</button>
+    </div>
+  </div>
+</div>

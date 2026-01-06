@@ -1,0 +1,55 @@
+<div class="page-center">
+  <div class="card-premium">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Welcome Back</h2>
+    <p class="subtitle">Login to your account</p>
+
+    <form (ngSubmit)="login()" #f="ngForm">
+      <!-- Global Error Message -->
+      <div *ngIf="errorMessage" class="error-banner"
+        style="background-color: #fee2e2; border: 1px solid #ef4444; color: #b91c1c; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; text-align: center;">
+        {{ errorMessage }}
+      </div>
+      <!-- Email -->
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-wrapper">
+          <input type="email" name="email" [(ngModel)]="model.email" #email="ngModel" required email
+            placeholder="john@example.com" class="input-premium">
+        </div>
+        <!-- Validation Error -->
+        <div class="error-msg" *ngIf="(f.submitted || email.touched) && email.invalid"
+          style="color: var(--danger); font-size: 0.85rem; margin-top: 0.25rem;">
+          <span *ngIf="email.errors?.['required']">Email is required</span>
+          <span *ngIf="email.errors?.['email']">Please enter a valid email</span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrapper password-toggle-wrapper">
+          <input [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="model.password"
+            #password="ngModel" required minlength="6" placeholder="••••••••" class="input-premium">
+          <button type="button" class="password-toggle-btn" (click)="showPassword = !showPassword">
+            <span class="iconify" [attr.data-icon]="showPassword ? 'mdi:eye-off' : 'mdi:eye'"></span>
+          </button>
+        </div>
+        <!-- Validation Error -->
+        <div class="error-msg" *ngIf="(f.submitted || password.touched) && password.invalid"
+          style="color: var(--danger); font-size: 0.85rem; margin-top: 0.25rem;">
+          <span *ngIf="password.errors?.['required']">Password is required</span>
+          <span *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login" [disabled]="!f.valid">
+        Login
+      </button>
+
+      <p class="footer-text">
+        Don't have an account?
+        <a routerLink="/register">Create one</a>
+      </p>
+    </form>
+  </div>
+</div>

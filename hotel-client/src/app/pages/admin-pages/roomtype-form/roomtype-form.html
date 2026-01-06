@@ -1,0 +1,82 @@
+<div class="container fade-in">
+  <div class="header-section">
+    <div>
+      <h2 class="title">{{ isEdit ? 'Edit Room Category' : 'Create Room Category' }}</h2>
+      <p class="subtitle">Define room specifications and hotel associations</p>
+    </div>
+    <button class="btn-back" routerLink="/admin/roomtypes">
+      <span class="iconify" data-icon="mdi:arrow-left"></span>
+      Back to List
+    </button>
+  </div>
+
+  <div class="form-card">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-grid">
+
+        <!-- Hotel Selection -->
+        <div class="form-group full-width">
+          <label>Target Hotels <span class="text-danger">*</span></label>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Select Hotels</mat-label>
+            <mat-select formControlName="hotelIds" multiple>
+              <mat-select-trigger>
+                {{form.get('hotelIds')?.value?.[0] ? getHotelName(form.get('hotelIds')?.value?.[0]) : ''}}
+                <span *ngIf="(form.get('hotelIds')?.value?.length || 0) > 1" class="example-additional-selection">
+                  (+{{(form.get('hotelIds')?.value?.length || 0) - 1}} {{form.get('hotelIds')?.value?.length === 2 ?
+                  'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let h of hotels" [value]="h.hotelId">
+                {{h.hotelName}} - {{h.city}}
+              </mat-option>
+            </mat-select>
+            <mat-hint>Select one or more hotels to apply this category to</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Category Name <span class="text-danger">*</span></label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput formControlName="roomTypeName" placeholder="e.g. Deluxe Suite">
+            <mat-icon matSuffix>bed</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <label>Base Price / Night <span class="text-danger">*</span></label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="number" formControlName="basePrice">
+            <span matPrefix>₹&nbsp;</span>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <label>Max Guests <span class="text-danger">*</span></label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="number" formControlName="maxGuests">
+            <mat-icon matSuffix>groups</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <textarea matInput formControlName="description" rows="4"
+              placeholder="Describe the room experience..."></textarea>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary" routerLink="/admin/roomtypes">Cancel</button>
+        <button type="submit" class="btn-primary" [disabled]="form.invalid">
+          <span class="iconify"
+            [attr.data-icon]="isEdit ? 'mdi:check-circle-outline' : 'mdi:plus-circle-outline'"></span>
+          {{ isEdit ? 'Update Category' : 'Create Category' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

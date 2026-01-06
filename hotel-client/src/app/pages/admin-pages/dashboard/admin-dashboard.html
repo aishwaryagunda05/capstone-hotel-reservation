@@ -1,0 +1,13 @@
+<div class="dashboard-container">
+    <!-- <h2>Admin Dashboard</h2> -->
+
+    <div class="dashboard-grid">
+        <a *ngFor="let item of menuItems" [routerLink]="item.link" class="dashboard-card">
+            <div class="icon-wrapper">
+                <span class="iconify" [attr.data-icon]="item.icon"></span>
+            </div>
+            <div class="card-title">{{ item.title }}</div>
+            <div class="card-desc">{{ item.description }}</div>
+        </a>
+    </div>
+</div>

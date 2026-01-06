@@ -1,0 +1,200 @@
+/* Professional Pending Reservations */
+:host {
+  display: block;
+  min-height: 80vh;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin-bottom: 2rem;
+}
+
+/* Card Grid Layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.reservation-card {
+  background: white;
+  border-radius: 12px;
+  /* Stronger, more premium shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--slate-100);
+}
+
+.reservation-card:hover {
+  transform: translateY(-4px);
+  /* Deeper lift effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Sections */
+.card-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--slate-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--slate-50);
+}
+
+.hotel-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-700);
+  font-weight: 700;
+}
+
+.hotel-icon {
+  font-size: 1.2rem;
+  color: var(--primary-500);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.info-row .iconify {
+  color: var(--slate-400);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.email-text {
+  font-size: 0.85rem;
+  color: var(--slate-500);
+}
+
+.rooms-list {
+  background: var(--slate-50);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--slate-700);
+  margin-bottom: 0.25rem;
+}
+
+.room-item:last-child {
+  margin-bottom: 0;
+}
+
+.room-number {
+  font-weight: 600;
+}
+
+.card-footer {
+  padding: 1rem 1.25rem;
+  background: white;
+  border-top: 1px solid var(--slate-100);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Action Buttons */
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-confirm {
+  background: #16a34a;
+  /* Green-600 */
+  color: #ffffff;
+  border: 1px solid #15803d;
+  box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+}
+
+.btn-confirm:hover {
+  background: #15803d;
+  /* Green-700 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(22, 163, 74, 0.3);
+}
+
+.btn-reject {
+  background: #ffffff;
+  color: #dc2626;
+  /* Red-600 */
+  border: 1px solid #fecaca;
+  /* Red-200 */
+}
+
+.btn-reject:hover {
+  background: #fef2f2;
+  /* Red-50 */
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+/* Badges */
+.badge {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.booked {
+  background: var(--warning-50);
+  color: var(--warning-700);
+  border: 1px solid var(--warning-200);
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--slate-500);
+  font-size: 1.1rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+}

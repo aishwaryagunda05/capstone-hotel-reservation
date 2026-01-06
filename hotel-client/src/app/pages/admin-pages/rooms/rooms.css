@@ -1,0 +1,328 @@
+/* Professional Rooms Management */
+
+.rooms-container {
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* .top button removed */
+
+
+/* .search-box removed */
+
+
+/* Material overrides for cleaner look */
+.mat-mdc-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hotel-card h3 {
+  background-color: #f1f5f9;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-header-row {
+  background-color: #fff !important;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 600 !important;
+  color: #64748b !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mat-mdc-cell {
+  color: #334155 !important;
+  font-size: 0.95rem !important;
+  border-bottom-color: #f1f5f9 !important;
+}
+
+.mat-mdc-row:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Chips */
+.mat-mdc-chip {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Hotel Grid Selection */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 160px;
+  background-color: #f1f5f9;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.card-content p {
+  margin: 0.5rem 0 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Professional Rooms Management */
+
+.rooms-container {
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.top button {
+  background-color: #3b82f6 !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+}
+
+.search-box {
+  width: 100%;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+/* Material overrides for cleaner look */
+.mat-mdc-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hotel-card h3 {
+  background-color: #f1f5f9;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Hotel Grid Selection */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 160px;
+  background-color: #f1f5f9;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.card-content p {
+  margin: 0.5rem 0 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.available {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.status-badge.booked {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Clean Back Icon Button */
+.btn-back {
+  background: transparent !important;
+  /* Force transparent */
+  border: none !important;
+  width: auto;
+  height: auto;
+  padding: 4px !important;
+  /* Minimal padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.btn-back .iconify {
+  font-size: 1.5rem !important;
+  /* Small cute size */
+  /* Nice and small */
+  color: #94a3b8 !important;
+  /* Softer gray */
+}
+
+.btn-back:hover {
+  background: transparent !important;
+  color: #3b82f6 !important;
+  /* Blue only on hover icon */
+  transform: translateX(-3px);
+}
+
+.btn-back:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-icon {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.btn-icon.edit {
+  color: #3b82f6;
+}
+
+.btn-icon.delete {
+  color: #ef4444;
+}
+
+.btn-icon:hover {
+  background: #f8fafc;
+}
+
+/* Local styles removed to use global premium classes */

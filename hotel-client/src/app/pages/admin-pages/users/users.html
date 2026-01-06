@@ -1,0 +1,76 @@
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Manage Users</h1>
+            <p>View and manage authorized users.</p>
+        </div>
+        <button class="add-btn premium-add-btn" (click)="addUser()">
+            <span class="iconify" data-icon="mdi:plus"></span> Add New User
+        </button>
+    </div>
+    <div style="padding: 0 2rem; margin-bottom: 1rem;">
+        <div class="search-box"
+            style="max-width: 400px; display: flex; align-items: center; background: white; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <span class="iconify" data-icon="mdi:magnify"
+                style="font-size: 1.2rem; color: #64748b; margin-right: 0.5rem;"></span>
+            <input type="text" (keyup)="applyFilter($event)" placeholder="Search users..."
+                style="border: none; outline: none; width: 100%; font-size: 0.95rem; color: #1e293b;">
+        </div>
+    </div>
+    <div class="table-container table-responsive">
+
+        <table mat-table [dataSource]="dataSource" matSort class="table-premium w-100">
+
+            <ng-container matColumnDef="fullName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Username </th>
+                <td mat-cell *matCellDef="let user">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="fw-bold text-dark">{{ user.fullName }}</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Email </th>
+                <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Role </th>
+                <td mat-cell *matCellDef="let user">
+                    <span class="badge" [class.admin]="user.role === 'Admin'" [class.manager]="user.role === 'Manager'">
+                        {{ user.role }}
+                    </span>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Phone </th>
+                <td mat-cell *matCellDef="let user"> {{ user.phone || '-' }} </td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="text-end" style="text-align: center;"> Actions </th>
+                <td mat-cell *matCellDef="let user" class="text-end">
+                    <div class="action-buttons justify-content-end">
+                        <button class="btn-icon edit" (click)="editUser(user.userId!)" title="Edit">
+                            <span class="iconify" data-icon="mdi:pencil"></span>
+                        </button>
+                        <button class="btn-icon delete" (click)="deleteUser(user.userId!)" title="Delete">
+                            <span class="iconify" data-icon="mdi:trash-can-outline"></span>
+                        </button>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="5" style="text-align:center; padding: 2rem;">No users found.</td>
+            </tr>
+        </table>
+        <div class="loading-state" *ngIf="loading">
+            <div class="spinner"></div>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of users"></mat-paginator>
+    </div>
+</div>

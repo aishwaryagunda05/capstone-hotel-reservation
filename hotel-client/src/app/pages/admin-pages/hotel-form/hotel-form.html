@@ -1,0 +1,72 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ isEditMode ? 'Edit Hotel' : 'Add New Hotel' }}</h2>
+    <p>Fill in the details below to {{ isEditMode ? 'update the' : 'create a new' }} hotel listing.</p>
+  </div>
+
+  <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="hotel-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="hotelName">Hotel Name <span class="required">*</span></label>
+        <input type="text" id="hotelName" formControlName="hotelName" placeholder="e.g. Grand Plaza"
+          [class.invalid]="submitted && f['hotelName'].errors">
+        <div class="error-msg" *ngIf="submitted && f['hotelName'].errors">Hotel Name is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" formControlName="email" placeholder="contact@hotel.com"
+          [class.invalid]="submitted && f['email'].errors">
+        <div class="error-msg" *ngIf="submitted && f['email'].errors?.['required']">Email is required</div>
+        <div class="error-msg" *ngIf="submitted && f['email'].errors?.['email']">Invalid email format</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="phone">Phone <span class="required">*</span></label>
+        <input type="text" id="phone" formControlName="phone" placeholder="10-digit number"
+          [class.invalid]="submitted && f['phone'].errors">
+        <div class="error-msg" *ngIf="submitted && f['phone'].errors?.['required']">Phone is required</div>
+        <div class="error-msg" *ngIf="submitted && f['phone'].errors?.['pattern']">Must be 10 digits</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="address">Address <span class="required">*</span></label>
+        <input type="text" id="address" formControlName="address" placeholder="Street Address"
+          [class.invalid]="submitted && f['address'].errors">
+        <div class="error-msg" *ngIf="submitted && f['address'].errors">Address is required</div>
+      </div>
+    </div>
+    <div class="form-row three-col">
+      <div class="form-group">
+        <label for="city">City <span class="required">*</span></label>
+        <input type="text" id="city" formControlName="city" placeholder="City"
+          [class.invalid]="submitted && f['city'].errors">
+        <div class="error-msg" *ngIf="submitted && f['city'].errors">Required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State <span class="required">*</span></label>
+        <input type="text" id="state" formControlName="state" placeholder="State"
+          [class.invalid]="submitted && f['state'].errors">
+        <div class="error-msg" *ngIf="submitted && f['state'].errors">Required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="pincode">Pincode <span class="required">*</span></label>
+        <input type="text" id="pincode" formControlName="pincode" placeholder="Zip/Pin"
+          [class.invalid]="submitted && f['pincode'].errors">
+        <div class="error-msg" *ngIf="submitted && f['pincode'].errors">Invalid Pincode</div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="cancel-btn" routerLink="/admin/hotels">Cancel</button>
+      <button type="submit" class="submit-btn" [disabled]="loading">
+        {{ loading ? 'Saving...' : (isEditMode ? 'Update Hotel' : 'Create Hotel') }}
+      </button>
+    </div>
+
+  </form>
+</div>

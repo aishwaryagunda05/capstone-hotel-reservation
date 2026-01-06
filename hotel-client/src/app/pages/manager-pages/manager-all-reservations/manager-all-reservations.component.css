@@ -1,0 +1,67 @@
+/* Page Container */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+/* Sort Header Styling */
+::ng-deep .mat-sort-header-container {
+    justify-content: flex-start;
+}
+
+/* BADGES - Updated to Match Admin Role Styles (Pastel Pills) */
+.badge {
+    display: inline-flex;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    min-width: 80px;
+    justify-content: center;
+}
+
+/* Green: Confirmed, Booked, CheckedIn, Paid -> Similar to 'Manager' role style */
+.badge.confirmed,
+.badge.booked,
+.badge.checkedin,
+.badge.paid {
+    background-color: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+/* Orange: Pending (Payment or Status) */
+.badge.pending,
+.badge.paymentpending {
+    background-color: #ffedd5 !important;
+    color: #9a3412 !important;
+}
+
+/* Gray/Blue: CheckedOut -> Similar to 'Admin' or neutral role */
+.badge.checkedout {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+}
+
+/* Red: Cancelled */
+.badge.cancelled {
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+/* Table Premium Override */
+.table-premium th {
+    background: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.table-premium td {
+    padding: 1rem 1.5rem;
+    color: #334155;
+    font-size: 0.95rem;
+}

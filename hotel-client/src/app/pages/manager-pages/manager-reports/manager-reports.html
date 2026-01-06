@@ -1,0 +1,222 @@
+<div class="reports-container page-container">
+    <div class="page-header"
+        style="margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+            <!-- Dropdown Area -->
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <select class="form-select input-premium" style="max-width:300px; font-weight:600;" [ngModel]="hotelId"
+                    (ngModelChange)="onHotelChange($event)">
+                    <option [ngValue]="0">All Hotels (Combined)</option>
+                    <option *ngFor="let h of assignedHotels" [ngValue]="h.hotelId">
+                        {{ h.hotelName }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="hotelId === 0; else singleHotel">
+                <p class="subtitle">Aggregated performance across your {{ breakdownData.length }} assigned hotels</p>
+            </div>
+            <ng-template #singleHotel>
+                <p class="subtitle">Performance metrics for specific property</p>
+            </ng-template>
+        </div>
+
+        <div class="date-badge">
+            Today: {{ extractDate(stats?.activeGuests) || (getDate() | date:'mediumDate') }}
+        </div>
+    </div>
+
+    <!-- Error Alert -->
+    <div *ngIf="errorMsg" class="alert-error">
+        <span class="iconify" data-icon="mdi:alert-circle-outline"></span>
+        <strong>Error:</strong> {{ errorMsg }}
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid" *ngIf="stats">
+        <div class="stat-card revenue-card">
+            <div class="stat-content">
+                <span class="label">TOTAL REVENUE</span>
+                <h3 class="stat-value">{{ stats.totalRevenue | currency:'INR' }}</h3>
+                <span class="sub-label">Lifetime earnings</span>
+            </div>
+            <div class="icon-wrapper glass-success">
+                <span class="icon">💰</span>
+            </div>
+            <div class="bg-decoration"></div>
+        </div>
+
+        <!-- Only show Top Hotel if multiple hotels exist -->
+        <div class="stat-card" *ngIf="breakdownData.length > 1">
+            <div class="stat-content">
+                <span class="label">TOP PERFORMING</span>
+                <h3 class="stat-value text-truncate" title="{{stats.topHotel}}">{{ stats.topHotel }}</h3>
+                <span class="sub-label">Highest revenue generator</span>
+            </div>
+            <div class="icon-wrapper glass-rose">
+                <span class="icon">🏆</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">OCCUPANCY RATE</span>
+                <h3 class="stat-value">{{ stats.occupancyRate }}%</h3>
+                <span class="sub-label">{{ stats.activeGuests }} Active / {{ stats.totalRooms }} Rooms</span>
+            </div>
+            <div class="icon-wrapper glass-amber">
+                <span class="icon">📈</span>
+            </div>
+        </div>
+
+        <!-- Occupancy Report: Active Guests -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">ACTIVE GUESTS</span>
+                <h3 class="stat-value">{{ stats.activeGuests }}</h3>
+                <span class="sub-label">Currently checked in</span>
+            </div>
+            <div class="icon-wrapper glass-purple">
+                <span class="icon">👥</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="label">TOTAL ROOMS</span>
+                <h3 class="stat-value">{{ stats.totalRooms }}</h3>
+                <span class="sub-label">Total Inventory</span>
+            </div>
+            <div class="icon-wrapper glass-indigo">
+                <span class="icon">🏢</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Charts Section -->
+    <div class="charts-grid">
+        <!-- Revenue Trend SVG Chart -->
+        <div class="chart-card">
+            <div class="card-header-row">
+                <h3>Revenue Trend</h3>
+                <span class="badge badge-blue">6 Months Financials</span>
+            </div>
+            <div class="chart-container line-chart">
+                <div *ngIf="revenueData.length === 0" class="no-data">
+                    <span class="iconify" data-icon="mdi:chart-timeline-variant"></span>
+                    <p>No revenue data available yet.</p>
+                </div>
+
+                <div class="svg-wrapper" *ngIf="revenueData.length > 0">
+                    <svg [attr.viewBox]="'0 0 ' + viewWidth + ' ' + viewHeight" class="revenue-chart">
+                        <!-- Grid Lines (Simple) -->
+                        <line x1="40" y1="260" x2="560" y2="260" stroke="#f1f5f9" />
+                        <line x1="40" y1="186" x2="560" y2="186" stroke="#f1f5f9" stroke-dasharray="4" />
+                        <line x1="40" y1="113" x2="560" y2="113" stroke="#f1f5f9" stroke-dasharray="4" />
+                        <line x1="40" y1="40" x2="560" y2="40" stroke="#f1f5f9" stroke-dasharray="4" />
+
+                        <!-- Area Fill -->
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <path [attr.d]="areaPath" fill="url(#grad1)" />
+
+                        <!-- Line Stroke -->
+                        <path [attr.d]="linePath" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <!-- X-Axis Labels -->
+                    <div class="chart-labels">
+                        <span *ngFor="let item of revenueData">{{ item.month.split(' ')[0] }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation Donut Chart -->
+        <div class="chart-card">
+            <div class="card-header-row">
+                <h3>Reservation Summary</h3>
+                <span class="badge badge-green">Bookings Distribution</span>
+            </div>
+
+            <div class="chart-container pie-chart-wrapper">
+
+                <div class="container-flex-center">
+                    <div class="donut-chart" [style.background]="pieGradient">
+                        <div class="hole">
+                            <span class="total-label" *ngIf="stats">{{ stats.activeGuests + stats.totalGuests -
+                                stats.activeGuests + stats.activeGuests }} <small style="display:none">Wait logic
+                                    check</small>
+                                {{ distributionCount }}
+                                <small>Total Events</small></span>
+                        </div>
+                    </div>
+
+                    <div class="pie-legend">
+                        <div *ngIf="distribution.length === 0" class="no-data-pie">No bookings yet</div>
+                        <div *ngFor="let item of distribution" class="pie-legend-item">
+                            <span class="dot" [style.background]="getColor(item.status)"></span>
+                            <span class="legend-text">{{ item.status }}</span>
+                            <span class="legend-val">{{ item.count }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Breakdown Table -->
+    <div class="table-card premium-table-card" *ngIf="breakdownData && breakdownData.length > 0">
+        <div class="card-header-row table-header">
+            <div>
+                <h3>Detailed Revenue & Occupancy Report</h3>
+                <p class="subtitle sm">Breakdown by specific hotel performance</p>
+            </div>
+            <button class="btn-icon-soft">
+                <span class="iconify" data-icon="mdi:download-outline"></span> Export
+            </button>
+        </div>
+        <div class="table-responsive">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Hotel Name</th>
+                        <th>Location</th>
+                        <th>Total Revenue</th>
+                        <th>Occupancy</th>
+                        <th>Active Guests</th>
+                        <th>Total Rooms</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let h of breakdownData">
+                        <td>
+                            <div class="hotel-info">
+                                <span class="hotel-name">{{ h.hotelName }}</span>
+                            </div>
+                        </td>
+                        <td class="text-mute">{{ h.city }}</td>
+                        <td class="font-mono text-success">{{ h.totalRevenue | currency:'INR' }}</td>
+                        <td>
+                            <div class="occupancy-pill" [class.high]="h.occupancyRate > 70"
+                                [class.med]="h.occupancyRate > 40 && h.occupancyRate <= 70"
+                                [class.low]="h.occupancyRate <= 40">
+                                {{ h.occupancyRate }}%
+                            </div>
+                        </td>
+                        <td class="font-bold">{{ h.activeGuests }}</td>
+                        <td class="text-mute">{{ h.totalRooms }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

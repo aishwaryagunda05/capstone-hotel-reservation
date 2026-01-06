@@ -1,0 +1,10 @@
+/* Global Material Overrides - Optional, can go in styles.css but enforcing here for specific components */
+.mat-mdc-button-base {
+    border-radius: 8px !important;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: 0.02em !important;
+}
+
+.mat-mdc-card {
+    border-radius: 16px !important;
+}

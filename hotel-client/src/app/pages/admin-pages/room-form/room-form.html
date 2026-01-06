@@ -1,0 +1,67 @@
+<div class="page-center">
+  <div class="card-premium">
+
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2 text-muted"></p>
+    </div>
+
+    <div *ngIf="!loading">
+      <h2>{{ isEdit ? 'Edit Room' : 'Create Room' }}</h2>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+          <label>Hotel <span class="text-danger">*</span></label>
+          <select formControlName="hotelId" class="input-premium">
+            <option value="">Select Hotel</option>
+            <option *ngFor="let h of hotels" [value]="h.hotelId">
+              {{ h.hotelName }} — {{ h.city }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Room Type <span class="text-danger">*</span></label>
+          <select formControlName="roomTypeId" class="input-premium" [disabled]="!form.get('hotelId')?.value">
+            <option value="">{{ form.get('hotelId')?.value ? 'Select Room Type' : 'Select a hotel first' }}</option>
+            <option *ngFor="let t of filteredRoomTypes" [value]="t.roomTypeId">
+              {{ t.roomTypeName }} — ₹{{ t.basePrice }}
+            </option>
+          </select>
+          <div *ngIf="form.get('hotelId')?.value && filteredRoomTypes.length === 0" class="text-danger small mt-1">
+            No room categories found.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Room Number <span class="text-danger">*</span></label>
+          <input formControlName="roomNumber" class="input-premium" placeholder="e.g. 101, A-12">
+          <div *ngIf="form.get('roomNumber')?.touched && form.get('roomNumber')?.errors" class="text-danger small mt-1">
+            Room Number is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Status <span class="text-danger">*</span></label>
+          <select formControlName="status" class="input-premium">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button type="button" routerLink="/admin/rooms" class="btn-outline">Cancel</button>
+          <button type="submit" class="btn-gradient" [disabled]="form.invalid">
+            {{ isEdit ? 'Update' : 'Create' }}
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="/assets/image1.jpeg" class="logo" alt="Hotel Logo">
+    </div>
+    <div class="nav-center">
+      EasyStay Reservation System
+    </div>
+    <button class="hamburger" (click)="isMobileMenuOpen = !isMobileMenuOpen">
+      <span class="iconify" [attr.data-icon]="isMobileMenuOpen ? 'mdi:close' : 'mdi:menu'"></span>
+    </button>
+
+    <ul class="nav-right" [class.mobile-open]="isMobileMenuOpen">
+
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <span class="iconify" data-icon="mdi:home-outline"></span>
+          Home
+        </a>
+      </li>
+      <ng-container *ngIf="!isLogged">
+
+        <li>
+          <a routerLink="/login" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:login-variant"></span>
+            Login
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/register" routerLinkActive="active">
+            <span class="iconify" data-icon="mdi:account-plus-outline"></span>
+            Register
+          </a>
+        </li>
+
+      </ng-container>
+      <ng-container *ngIf="isLogged">
+        <li class="profile-wrapper" *ngIf="auth.role === 'Guest'">
+          <button class="profile-btn" (click)="toggleNotifications()">
+            <span class="iconify" data-icon="mdi:bell-outline"></span>
+            <span class="badge-count" *ngIf="(unreadNotifications$ | async)?.length! > 0">
+              {{ (unreadNotifications$ | async)?.length }}
+            </span>
+          </button>
+          <div class="profile-card notification-card" *ngIf="showNotifications">
+            <h4>Notifications</h4>
+            <div class="notification-list">
+              <div *ngFor="let n of unreadNotifications$ | async" class="notification-item" [class.unread]="!n.isRead">
+                <div class="note-content">
+                  <p class="note-msg">{{ n.message }}</p>
+                  <small class="note-time">{{ n.createdAt | date:'short' }}</small>
+                </div>
+              </div>
+              <p *ngIf="(unreadNotifications$ | async)?.length === 0" class="no-notes">
+                No new notifications
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="profile-wrapper">
+
+          <button class="profile-btn" (click)="toggleProfile()">
+            <span class="iconify" data-icon="mdi:account-circle-outline"></span>
+          </button>
+          <div class="profile-card" *ngIf="showProfile">
+
+            <h4>Your Profile</h4>
+
+            <div class="profile-details">
+              <p><strong>Name:</strong> {{ auth.name }}</p>
+              <p><strong>Role:</strong> {{ auth.role }}</p>
+            </div>
+
+            <button class="edit-btn" (click)="editProfile()">
+              <span class="iconify" data-icon="mdi:pencil"></span> Edit Details
+            </button>
+
+          </div>
+
+        </li>
+        <li>
+          <a (click)="logout()">
+            <span class="iconify" data-icon="mdi:logout"></span>
+            Logout
+          </a>
+        </li>
+
+      </ng-container>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,105 @@
+<div class="rooms-container">
+
+  <!-- STATE 1: SELECT HOTEL -->
+  <div *ngIf="!selectedHotel" class="hotel-selection fade-in">
+    <h2>Select Hotel</h2>
+    <div class="hotels-grid">
+      <div *ngFor="let h of hotels; let i=index" class="hotel-card" (click)="selectHotel(h)">
+        <div class="card-image" [style.background-image]="'url(/assets/hotel-' + (i % 3 + 1) + '.png)'"></div>
+        <div class="card-content">
+          <h3>{{ h.hotelName }}</h3>
+          <p>{{ h.city }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATE 2: MANAGE ROOMS -->
+  <div *ngIf="selectedHotel" class="rooms-list fade-in">
+    <div class="top">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="btn-back" (click)="clearSelection()" title="Back to Hotels">
+          <span class="iconify" data-icon="mdi:arrow-left-circle"></span>
+        </button>
+        <h2>Rooms - {{ selectedHotel.hotelName }}</h2>
+      </div>
+
+      <button class="add-btn premium-add-btn" (click)="add()">
+        <span class="iconify" data-icon="mdi:plus"></span>
+        Add Room
+      </button>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="filter-section">
+      <div class="search-box big-search">
+        <span class="iconify" data-icon="mdi:magnify"></span>
+        <input type="text" placeholder="Search rooms..." (keyup)="applyFilter($event)">
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div class="loading-state" *ngIf="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Rooms Table -->
+    <div class="table-responsive" *ngIf="!loading && pagedRooms.length > 0">
+      <table class="table-premium">
+        <thead>
+          <tr>
+            <th>Room Number</th>
+            <th>Type</th>
+            <th class="text-center">Status</th>
+            <th>Price</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of pagedRooms">
+            <td>
+              <span class="fw-bold text-dark">{{ r.roomNumber }}</span>
+            </td>
+            <td>
+              <div class="d-flex align-items-center gap-2 text-muted">
+                {{ r.roomType }}
+              </div>
+            </td>
+            <td class="text-center">
+              <span class="status-badge" [class.available]="r.status === 'Available'"
+                [class.booked]="r.status !== 'Available'">
+                {{ r.status }}
+              </span>
+            </td>
+            <td>
+              <span class="fw-bold text-success">{{ r.price | currency:'INR' }}</span> / night
+            </td>
+            <td class="text-end">
+              <div class="action-buttons justify-content-end">
+                <button class="btn-icon edit" (click)="edit(r.roomId)" title="Edit">
+                  <span class="iconify" data-icon="mdi:pencil"></span>
+                </button>
+                <button class="btn-icon delete" (click)="delete(r.roomId)" title="Delete">
+                  <span class="iconify" data-icon="mdi:trash-can-outline"></span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty State for Rooms -->
+    <div *ngIf="!loading && pagedRooms.length === 0" class="empty-state">
+      <span class="iconify" data-icon="mdi:door-closed-lock"></span>
+      <h3>No Rooms Found</h3>
+      <p>Click "Add Room" to create your first room for this hotel.</p>
+    </div>
+
+    <!-- Pagination -->
+    <mat-paginator [length]="filteredRooms.length" [pageSize]="pageSize" [pageSizeOptions]="[10, 20, 50]"
+      (page)="onPageChange($event)" *ngIf="!loading && filteredRooms.length > 0">
+    </mat-paginator>
+  </div>
+
+</div>

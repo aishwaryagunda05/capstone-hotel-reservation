@@ -1,0 +1,85 @@
+<div class="service-container page-container">
+
+    <!-- Header -->
+    <div class="header">
+        <h2><span class="iconify" data-icon="mdi:bell-ring-outline"></span> Room Service</h2>
+        <p>Request amenities, food, or assistance directly to your room.</p>
+    </div>
+
+    <div class="content-grid grid-cols-2 md-cols-1">
+
+        <!-- LEFT: New Request Form -->
+        <div class="card form-card">
+            <h3>New Request</h3>
+
+            <div class="form-group" *ngIf="rooms.length > 0">
+                <label>Select Room</label>
+                <select [(ngModel)]="model.roomId">
+                    <option [ngValue]="null" disabled>Select a room</option>
+                    <option *ngFor="let room of rooms" [ngValue]="room.roomId">
+                        Room {{ room.roomNumber }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Service Type</label>
+                <select [(ngModel)]="model.requestType">
+                    <option *ngFor="let type of requestTypes" [value]="type">{{ type }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Description / Instructions</label>
+                <textarea [(ngModel)]="model.description" rows="4"
+                    placeholder="E.g. Two extra towels, Order Classic Burger with fries..."></textarea>
+            </div>
+
+            <button class="btn-submit" (click)="submitRequest()" [disabled]="loading">
+                <span *ngIf="!loading">Send Request</span>
+                <span *ngIf="loading">Sending...</span>
+            </button>
+
+            <p class="note">
+                <span class="iconify" data-icon="mdi:information-outline"></span>
+                Service available only for currently Checked-In guests.
+            </p>
+        </div>
+
+        <!-- RIGHT: History -->
+        <div class="card history-card">
+            <h3>Request History</h3>
+
+            <div *ngIf="loading && requests.length === 0" class="loading-text">Loading history...</div>
+
+            <div *ngIf="!loading && requests.length === 0" class="empty-state">
+                <span class="iconify" data-icon="mdi:history"></span>
+                <p>No active requests.</p>
+            </div>
+
+            <div class="request-list" *ngIf="requests.length > 0">
+                <div class="request-item" *ngFor="let r of requests">
+                    <div class="r-top">
+                        <span class="r-type">{{ r.requestType }}</span>
+                        <span class="r-status" [class]="r.status.toLowerCase()">{{ r.status }}</span>
+                    </div>
+                    <div class="r-info-chips">
+                        <span class="chip"><span class="iconify" data-icon="mdi:domain"></span> {{ r.hotelName }}</span>
+                        <span class="chip"><span class="iconify" data-icon="mdi:door-open"></span> Room {{ r.roomNumber
+                            }}</span>
+                        <span class="chip"><span class="iconify" data-icon="mdi:calendar-range"></span> {{ r.checkInDate
+                            | date:'shortDate' }} - {{ r.checkOutDate | date:'shortDate' }}</span>
+                    </div>
+                    <p class="r-desc">{{ r.description }}</p>
+                    <div class="r-details">
+                        <span *ngIf="r.status === 'Served'" class="price-tag">
+                            Charge: ₹{{ r.price || 0 }}
+                        </span>
+                        <span class="r-time">{{ r.createdAt | date:'medium' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

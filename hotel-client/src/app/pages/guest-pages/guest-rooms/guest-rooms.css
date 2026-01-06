@@ -1,0 +1,228 @@
+/* Page Container */
+.page {
+    padding: 40px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hotel-details {
+    text-align: right;
+}
+
+.hotel-details h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #1e293b;
+    font-weight: 800;
+}
+
+.hotel-details .subtitle {
+    margin: 0.5rem 0 0;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Filters Toolbar */
+.filters-toolbar {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto 100px auto;
+}
+
+/* Room Card */
+.room-card {
+    border-radius: 16px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent !important;
+    background: white;
+    overflow: hidden;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.room-card.selected-card {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.card-image-placeholder {
+    height: 200px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+.card-image-placeholder mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+}
+
+.room-specs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.price-highlight {
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.total-price-tag {
+    background: #f0f9ff;
+    color: #0369a1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Breakdown */
+.breakdown {
+    background: #fff7ed;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    color: #9a3412;
+}
+
+.breakdown-label {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+/* Paginator */
+mat-paginator {
+    background: transparent !important;
+    margin-top: 2rem;
+    border-radius: 12px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+    border-top: 1px solid #e2e8f0;
+}
+
+.selection-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.selection-summary .count {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.selection-summary .total {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+/* Material Overrides */
+.selected-btn {
+    background-color: #dbeafe !important;
+    color: #1d4ed8 !important;
+    border-color: transparent !important;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #cbd5e1;
+}
+
+.empty-icon {
+    font-size: 80px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: #475569;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: #64748b;
+    gap: 1rem;
+}

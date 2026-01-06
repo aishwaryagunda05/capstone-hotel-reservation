@@ -1,0 +1,89 @@
+<div class="page-container">
+  <div class="page-header">
+    <div class="header-content">
+      <h1>Room Categories</h1>
+      <p>Manage room types, pricing, and hotel associations</p>
+    </div>
+    <button class="add-btn premium-add-btn" (click)="add()">
+      <span class="iconify" data-icon="mdi:plus"></span>
+      Add Category
+    </button>
+  </div>
+
+  <!-- Search & Filter -->
+  <div class="filter-section">
+    <div class="search-box big-search">
+      <span class="iconify" data-icon="mdi:magnify"></span>
+      <input type="text" placeholder="Search categories..." (keyup)="applyFilter($event)">
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Room Categories Groups -->
+  <div class="groups-container fade-in" *ngIf="!loading && hotelGroups.length > 0">
+
+    <div class="hotel-group" *ngFor="let group of hotelGroups" style="margin-bottom: 3rem;">
+      <h3 class="group-title"
+        style="margin-bottom: 1rem; color: #334155; font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+        <span class="iconify" data-icon="mdi:domain" style="color: #4f46e5;"></span>
+        {{ group.hotelName }}
+      </h3>
+
+      <div class="table-responsive">
+        <table class="table-premium">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Base Price</th>
+              <th>Max Guests</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of group.roomTypes">
+              <td>
+                <span class="fw-bold text-dark">{{ r.roomTypeName }}</span>
+              </td>
+              <td class="text-muted"
+                style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                {{ r.description }}
+              </td>
+              <td>
+                <span class="fw-bold text-success">{{ r.basePrice | currency:'INR' }}</span> / night
+              </td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="iconify text-muted" data-icon="mdi:account-group"></span>
+                  {{ r.maxGuests }} Guests
+                </div>
+              </td>
+              <td class="text-end">
+                <div class="action-buttons justify-content-end">
+                  <button class="btn-icon edit" (click)="edit(r.roomTypeId!)" title="Edit">
+                    <span class="iconify" data-icon="mdi:pencil"></span>
+                  </button>
+                  <button class="btn-icon delete" (click)="delete(r.roomTypeId!)" title="Delete">
+                    <span class="iconify" data-icon="mdi:trash-can-outline"></span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && hotelGroups.length === 0" class="empty-state">
+    <span class="iconify" data-icon="mdi:emoticon-sad-outline"></span>
+    <h3>No Room Categories Found</h3>
+    <p>Get started by adding your first room category.</p>
+  </div>
+
+</div>

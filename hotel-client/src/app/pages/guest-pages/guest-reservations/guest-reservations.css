@@ -1,0 +1,396 @@
+/* Guest Reservations - Simple */
+.page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--primary-color, #6200ea);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  color: #666;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.reservation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-badge {
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  /* Optional: simpler text */
+}
+
+.status-badge.booked {
+  background: transparent;
+  color: #007bff;
+}
+
+.status-badge.confirmed {
+  background: transparent;
+  color: #28a745;
+}
+
+.status-badge.checkedin {
+  background: transparent;
+  color: #fd7e14;
+}
+
+.status-badge.checkedout {
+  background: transparent;
+  color: #666;
+}
+
+.status-badge.cancelled {
+  background: transparent;
+  color: #dc3545;
+}
+
+.status-badge.completed {
+  background: transparent;
+  color: #666;
+  border: none;
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.hotel-row,
+.date-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.hotel-address {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.rooms-list {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.room-item:last-child {
+  border-bottom: none;
+}
+
+.total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--primary-color, #6200ea);
+}
+
+.card-actions {
+  padding: 1rem;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-cancel {
+  background: #ffebee;
+  color: #c62828;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-pay {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-pay:hover {
+  background: #1565c0;
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close-btn {
+  background: #f1f5f9;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #334155;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #e2e8f0;
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.success-banner {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-banner .iconify {
+  font-size: 2rem;
+}
+
+.invoice-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.invoice-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.subtotal {
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+  font-weight: 600;
+}
+
+.grand-total {
+  border-top: 2px solid #333;
+  padding-top: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.payment-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-pay-confirm {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-secondary {
+  background: #f3f3f3;
+  color: #333;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.paid-stamp {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #2e7d32;
+  border: 3px solid #2e7d32;
+  padding: 0.25rem 1rem;
+  border-radius: 8px;
+  transform: rotate(-10deg);
+  opacity: 0.4;
+}
+
+.payment-success-msg {
+  display: inline-block;
+  color: #28a745;
+  font-weight: 500;
+  font-size: 0.95rem;
+  background: transparent;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.payment-mode-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment-mode-section label {
+  font-weight: 500;
+  color: #444;
+  white-space: nowrap;
+}
+
+.form-select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 200px;
+}

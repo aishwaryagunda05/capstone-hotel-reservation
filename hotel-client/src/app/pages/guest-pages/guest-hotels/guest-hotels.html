@@ -1,0 +1,37 @@
+<div class="page">
+
+  <div *ngIf="loading" class="skeleton-grid">
+    <!-- Display 6 skeleton cards while loading -->
+    <div class="skeleton-card" *ngFor="let s of [1,2,3,4,5,6]">
+      <div class="skeleton-image"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-text title"></div>
+        <div class="skeleton-text subtitle"></div>
+        <div class="skeleton-text button"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="error" class="error">
+    <h3>Example Error:</h3>
+    <p>{{error}}</p>
+    <button (click)="loadHotels()">Retry</button>
+  </div>
+
+  <div class="grid" *ngIf="!loading && !error">
+    <div class="hotel-card" *ngFor="let h of hotels; let i = index">
+      <div class="card-image" [style.background-image]="'url(' + getImage(i) + ')'"></div>
+      <div class="card-body">
+        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #2d3436;">{{h.hotelName}}</h3>
+        <p class="location" style="font-size: 1rem; color: #636e72;">
+          📍 {{h.city}}, {{h.address}}
+        </p>
+        <div style="font-size: 0.9rem; color: #b2bec3; margin-bottom: 1.5rem;">
+          Premium Stay
+        </div>
+        <button class="btn-select" (click)="openHotel(h)">View Rooms & Book ➜</button>
+      </div>
+    </div>
+  </div>
+</div>

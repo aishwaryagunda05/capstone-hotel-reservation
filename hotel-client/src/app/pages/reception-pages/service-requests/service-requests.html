@@ -1,0 +1,58 @@
+<div class="requests-container">
+    <div class="header">
+        <h3>Guest Service Requests</h3>
+        <button class="btn-refresh" (click)="loadRequests()">
+            <span class="iconify" data-icon="mdi:refresh"></span> Refresh
+        </button>
+    </div>
+
+    <div *ngIf="!loading && requests.length === 0" class="empty-state">
+        <span class="iconify" data-icon="mdi:inbox-check"></span>
+        <p>No active requests found.</p>
+    </div>
+    <div *ngIf="loading" class="loading">Loading requests...</div>
+    <div class="req-grid" *ngIf="requests.length > 0">
+        <div class="req-card" *ngFor="let r of requests" [class.served]="r.status === 'Served'">
+            <div class="req-header">
+                <span class="room-badge">Room {{ r.roomNumber }}</span>
+                <span class="time">{{ r.createdAt | date:'shortTime' }}</span>
+            </div>
+
+            <div class="req-body">
+                <h4>{{ r.requestType }}</h4>
+                <p>"{{ r.description }}"</p>
+                <div class="guest-info">
+                    <span class="iconify" data-icon="mdi:account"></span> {{ r.guestName }}
+                </div>
+            </div>
+
+            <div class="req-footer">
+                <span class="status-badge" [class]="r.status.toLowerCase()">{{ r.status }}</span>
+
+                <button *ngIf="r.status === 'Pending'" class="btn-serve" (click)="openServeModal(r)">
+                    Mark Served
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showServeModal">
+    <div class="modal-content">
+        <button class="close-modal-btn" (click)="closeModal()">×</button>
+        <h3>Complete Request</h3>
+        <p>You are marking this request as <strong>Served</strong>.</p>
+        <p class="desc-preview">{{ selectedRequest?.requestType }}: {{ selectedRequest?.description }}</p>
+
+        <div class="form-group">
+            <label>Service Charge (₹)</label>
+            <input type="number" [(ngModel)]="servicePrice" placeholder="0.00" min="0">
+            <small>Enter 0 if this is a complimentary service.</small>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-cancel" (click)="closeModal()">Cancel</button>
+            <button class="btn-confirm" (click)="confirmServe()">Confirm & Charge</button>
+        </div>
+    </div>
+</div>

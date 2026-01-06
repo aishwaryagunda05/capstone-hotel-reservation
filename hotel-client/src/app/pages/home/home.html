@@ -1,0 +1,104 @@
+<div class="home-wrapper">
+  <div class="hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>Your Comfort, Our Priority</h1>
+        <p class="hero-text">
+          Your perfect stay is just a click away! Experience luxury, comfort, and world-class hospitality
+          at our handpicked destinations.
+        </p>
+
+        <div class="actions">
+          <button (click)="bookNow()" class="btn primary">Start Booking</button>
+          <a *ngIf="!auth.isLoggedIn" routerLink="/register" class="btn secondary">Join Membership</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Experience the Best</h2>
+        <p>We provide everything you need for a comfortable stay</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image" [style.background-image]="'url(/assets/luxury-room.png)'"></div>
+          <div class="feature-content">
+            <h3>Luxury Rooms</h3>
+            <p>Spacious suites with premium bedding and breathtaking views.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image" [style.background-image]="'url(/assets/room-service.png)'"></div>
+          <div class="feature-content">
+            <h3>24/7 Room Service</h3>
+            <p>Whatever you need, whenever you need it. Just a call away.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image" [style.background-image]="'url(/assets/swimming-pool.png)'"></div>
+          <div class="feature-content">
+            <h3>Swimming Pools</h3>
+            <p>Relax and unwind in our pristine, temperature-controlled pools.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image" [style.background-image]="'url(/assets/wifi.png)'"></div>
+          <div class="feature-content">
+            <h3>High-Speed WiFi</h3>
+            <p>Stay connected with complimentary high-speed internet access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hotels-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Destinations</h2>
+        <p>Explore our most popular and highly rated locations</p>
+      </div>
+
+      <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Finding the perfect spots for you...</p>
+      </div>
+
+      <div *ngIf="!loading && error" class="error-state" style="text-align: center; color: red; padding: 20px;">
+        <p>{{ error }}</p>
+        <p><small>Please check if the backend server is running.</small></p>
+      </div>
+
+      <div *ngIf="!loading && !error && featuredHotels.length === 0" class="empty-state">
+        <p>No featured hotels available at the moment.</p>
+      </div>
+
+      <div *ngIf="!loading && featuredHotels.length > 0" class="hotels-grid">
+        <div *ngFor="let hotel of featuredHotels; let i = index" class="hotel-card" (click)="bookNow()">
+                    <div class="card-image" [style.background-image]="'url(/assets/hotel-' + (i % 3 + 1) + '.png)'"></div>
+
+          <div class="card-content">
+            <h3>{{ hotel.hotelName }}</h3>
+            <p class="location"><span class="material-icons">place</span> {{ hotel.city }}</p>
+            <p class="description">Experience a memorable stay with us in {{ hotel.city }}. Enjoy world-class amenities
+              and service.</p>
+
+            <div class="card-footer">
+              <button class="btn-text">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-all-container">
+        <button (click)="bookNow()" class="btn outline">View All Locations</button>
+      </div>
+    </div>
+  </section>
+
+</div>

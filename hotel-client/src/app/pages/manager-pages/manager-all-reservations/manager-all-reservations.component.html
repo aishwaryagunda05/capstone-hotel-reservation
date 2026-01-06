@@ -1,0 +1,98 @@
+<div class="page-container" style="padding: 2rem;">
+    <div class="page-header" style="margin-bottom: 24px;">
+        <h2 style="font-size: 1.8rem; font-weight: 700; color: #1e293b; letter-spacing: -0.02em; margin:0;">All
+            Reservations</h2>
+        <p style="color: #64748b; margin-top:0.5rem;">View and manage guest reservations across your hotels</p>
+    </div>
+
+    <div *ngIf="loading" class="loading-state">
+        <div class="spinner-premium"></div>
+        <span style="margin-left: 1rem; color: #64748b;">Loading data...</span>
+    </div>
+
+    <div *ngIf="errorMsg" class="error-msg"
+        style="color: #dc2626; padding: 1rem; background: #fee2e2; border-radius: 8px;">
+        {{ errorMsg }}
+    </div>
+
+    <!-- Search Box -->
+    <div *ngIf="!loading && !errorMsg" style="margin-bottom: 1.5rem;">
+        <input (keyup)="applyFilter($event)" placeholder="Search reservations..."
+            style="width: 100%; max-width: 400px; padding: 0.8rem 1rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem;">
+    </div>
+
+    <div *ngIf="!loading && !errorMsg" class="mat-elevation-z0"
+        style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden;">
+
+        <table mat-table [dataSource]="dataSource" matSort class="w-full table-premium">
+
+            <!-- Hotel Column -->
+            <ng-container matColumnDef="hotelName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> HOTEL </th>
+                <td mat-cell *matCellDef="let res">
+                    <span style="font-weight: 500; color: #475569;">{{ res.hotelName || 'Unknown Hotel' }}</span>
+                </td>
+            </ng-container>
+
+            <!-- Guest Column -->
+            <ng-container matColumnDef="guestName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> GUEST </th>
+                <td mat-cell *matCellDef="let res">
+                    <span style="font-weight: 600; color: #1e293b;">{{ res.guestName }}</span>
+                </td>
+            </ng-container>
+
+            <!-- Room Column -->
+            <ng-container matColumnDef="room">
+                <th mat-header-cell *matHeaderCellDef> ROOM CHECKS </th>
+                <td mat-cell *matCellDef="let res">
+                    <span style="font-weight: 500; color: #334155;">{{ res.roomNumbers ? res.roomNumbers.join(', ') :
+                        'N/A' }}</span>
+                </td>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> TOTAL PRICE </th>
+                <td mat-cell *matCellDef="let res" style="font-weight: 700; color: #0f172a;">
+                    {{ res.totalPrice | currency:'INR' }}
+                </td>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> STATUS </th>
+                <td mat-cell *matCellDef="let res">
+                    <span class="badge" [ngClass]="(res.status || 'booked').toLowerCase()">
+                        {{ res.status }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <!-- Payment Column -->
+            <ng-container matColumnDef="payment">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> PAYMENT </th>
+                <td mat-cell *matCellDef="let res">
+                    <span class="badge"
+                        [ngClass]="(res.paymentStatus || 'pending').toLowerCase() === 'paid' ? 'paid' : 'pending'">
+                        {{ res.paymentStatus || 'Pending' }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6" style="text-align:center; padding: 2rem;">No matching records found.
+                </td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+        <div *ngIf="dataSource.data.length === 0" class="empty-state" style="padding: 3rem; text-align: center;">
+            <p style="color: #94a3b8;">No reservations found.</p>
+        </div>
+    </div>
+</div>

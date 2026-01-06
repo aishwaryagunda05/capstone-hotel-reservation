@@ -1,0 +1,154 @@
+
+:host {
+  display: block;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+h2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--slate-900);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.card.seasonal-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card.seasonal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--slate-800);
+  margin-bottom: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.badge-group {
+  margin-bottom: 1rem;
+}
+
+.badge {
+  padding: 0.35rem 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: var(--slate-100);
+  color: var(--slate-600);
+  letter-spacing: 0.05em;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--slate-700);
+  background: var(--slate-50);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--slate-200);
+}
+
+.date-range .iconify {
+  color: var(--primary-500);
+  font-size: 1.1rem;
+}
+
+.price-tag {
+  color: var(--slate-900);
+  font-weight: 800;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  letter-spacing: -0.03em;
+}
+
+.price-tag span {
+  font-size: 0.9rem;
+  color: var(--slate-400);
+  font-weight: 500;
+}
+
+.card-footer {
+  background-color: white !important;
+  border-top: none !important;
+  padding: 1rem 1.5rem;
+  display: flex !important;
+  justify-content: flex-end;
+  gap: 1rem !important;
+    align-items: center;
+}
+
+.card-footer button {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.2s !important;
+}
+
+.card-footer button .iconify {
+  font-size: 1.25rem !important;
+}
+
+.card-footer .btn-edit {
+  color: var(--primary-600) !important;
+}
+
+.card-footer .btn-edit:hover {
+  background-color: var(--primary-50) !important;
+  border-radius: 6px;
+}
+
+.card-footer .btn-delete {
+  color: var(--danger) !important;
+}
+
+.card-footer .btn-delete:hover {
+  background-color: #fef2f2 !important;
+  border-radius: 6px;
+}

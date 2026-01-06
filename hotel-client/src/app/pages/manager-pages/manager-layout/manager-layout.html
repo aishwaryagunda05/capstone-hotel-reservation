@@ -1,0 +1,60 @@
+<div class="admin-container" [class.sidebar-open]="isOpen">
+    <!-- Mobile Burger -->
+    <button class="menu-toggle" (click)="toggleSidebar()">
+        <span class="iconify" [attr.data-icon]="isOpen ? 'mdi:close' : 'mdi:menu'"></span>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" [class.open]="isOpen">
+        <div class="sidebar-header">
+            <a routerLink="/manager" style="text-decoration: none;">
+                <h2>Easy<span>Stay</span></h2>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <!-- "Dashboard" link removed as per request (Cards view is default) -->
+                <li>
+                    <a routerLink="/manager/pending" routerLinkActive="active">
+                        <span class="iconify" data-icon="mdi:clipboard-clock-outline"></span>
+                        <span class="text">Pending Reservations</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/manager/rooms" routerLinkActive="active">
+                        <span class="iconify" data-icon="mdi:door-open"></span>
+                        <span class="text">Manage Rooms</span>
+                    </a>
+                </li>
+                <!-- Dynamic Links requiring Hotel ID -->
+                <li>
+                    <a [routerLink]="assignedHotelId !== null ? ['/manager/reports', assignedHotelId] : null"
+                        routerLinkActive="active" [class.disabled]="assignedHotelId === null">
+                        <span class="iconify" data-icon="mdi:chart-bar"></span>
+                        <span class="text">Hotel Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="assignedHotelId !== null ? ['/manager/reservations-list', assignedHotelId] : null"
+                        routerLinkActive="active" [class.disabled]="assignedHotelId === null">
+                        <span class="iconify" data-icon="mdi:format-list-bulleted"></span>
+                        <span class="text">All Reservations</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Logout removed (handled by Top Navbar) -->
+        <div class="sidebar-footer">
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>{{ isEdit ? 'Edit Room' : 'Add New Room' }}</h2>
+<mat-dialog-content>
+    <div class="form-container">
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Room Number</mat-label>
+            <input matInput [(ngModel)]="room.roomNumber" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Room Type</mat-label>
+            <mat-select [(ngModel)]="room.roomTypeId" (selectionChange)="onRoomTypeChange($event.value)" required>
+                <mat-option *ngFor="let type of roomTypes" [value]="type.roomTypeId">
+                    {{ type.roomTypeName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Price per Night</mat-label>
+            <input matInput type="number" [(ngModel)]="room.price" required>
+            <span matPrefix>₹&nbsp;</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="room.status" required>
+                <mat-option value="Available">Available</mat-option>
+                <mat-option value="Unavailable">Unavailable</mat-option>
+                <mat-option value="Maintenance">Maintenance</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- IsActive is implicitly handled typically, or we can expose it -->
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="!room.roomNumber">Save</button>
+</mat-dialog-actions>
