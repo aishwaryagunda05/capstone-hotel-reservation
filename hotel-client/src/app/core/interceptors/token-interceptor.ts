@@ -15,6 +15,5 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
       console.warn('No token found in localStorage');
     }
   }
-
   return next(req);
 };

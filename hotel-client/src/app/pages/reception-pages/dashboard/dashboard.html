@@ -185,25 +185,69 @@
             </button>
           </div>
 
-          <!-- Content -->
-          <div *ngIf="availableRooms.length > 0">
-            <div class="rooms-grid">
-              <div *ngFor="let room of availableRooms" class="room-card-selectable"
-                [class.selected]="selectedRoomIds.includes(room.roomId)" (click)="toggleRoomSelection(room.roomId)">
-                <div class="room-number">{{ room.roomNumber }}</div>
-                <div class="room-type">{{ room.roomType }}</div>
-                <div class="room-price">₹{{ room.price }}</div>
+          <!-- Content: Table View -->
+          <div *ngIf="availableRooms.length > 0" class="table-container-premium">
+            <table mat-table [dataSource]="walkInRoomsDataSource" class="mat-elevation-z1 room-table">
+              
+              <!-- Select Column -->
+              <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef> Select </th>
+                <td mat-cell *matCellDef="let row">
+                  <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? toggleRoomSelection(row.roomId) : null"
+                                [checked]="isSelected(row.roomId)">
+                  </mat-checkbox>
+                </td>
+              </ng-container>
 
-                <!-- Optional Checkmark Icon if selected -->
-                <div *ngIf="selectedRoomIds.includes(room.roomId)"
-                  style="position:absolute; top:8px; right:8px; color:#22c55e;">
-                  <span class="iconify" data-icon="mdi:check-circle" style="font-size:1.2rem;"></span>
-                </div>
-              </div>
-            </div>
+              <!-- Room Number -->
+              <ng-container matColumnDef="roomNumber">
+                <th mat-header-cell *matHeaderCellDef> Room # </th>
+                <td mat-cell *matCellDef="let row"> <strong>{{row.roomNumber}}</strong> </td>
+              </ng-container>
 
-            <div style="padding:1.5rem; border-top:1px solid #eee; background:#f8fafc;">
-              <button class="btn-checkin" style="width:100%; padding:1rem; font-size:1.1rem; font-weight:700;"
+              <!-- Type -->
+              <ng-container matColumnDef="roomType">
+                <th mat-header-cell *matHeaderCellDef> Type </th>
+                <td mat-cell *matCellDef="let row"> <span class="type-badge">{{row.roomType}}</span> </td>
+              </ng-container>
+
+              <!-- Capacity -->
+              <ng-container matColumnDef="maxGuests">
+                <th mat-header-cell *matHeaderCellDef> Capacity </th>
+                <td mat-cell *matCellDef="let row">
+                  <div style="display:flex; align-items:center; gap:4px;">
+                     <span class="iconify" data-icon="mdi:account" style="color:#64748b;"></span>
+                     {{row.maxGuests}}
+                  </div>
+                </td>
+              </ng-container>
+
+              <!-- Rate -->
+              <ng-container matColumnDef="pricePerNight">
+                <th mat-header-cell *matHeaderCellDef> Rate/Night </th>
+                <td mat-cell *matCellDef="let row"> ₹ {{row.pricePerNight}} </td>
+              </ng-container>
+
+              <!-- Total -->
+              <ng-container matColumnDef="totalPrice">
+                <th mat-header-cell *matHeaderCellDef> Total Price </th>
+                <td mat-cell *matCellDef="let row" style="font-weight:700; color:#0369a1;">
+                  ₹ {{row.totalPrice}}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="walkInColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: walkInColumns;" 
+                  (click)="toggleRoomSelection(row.roomId)"
+                  class="hover-row">
+              </tr>
+            </table>
+
+            <mat-paginator #walkInPaginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" aria-label="Select page"></mat-paginator>
+
+            <div style="padding:1.5rem; background:#f8fafc; text-align:right;">
+               <button class="btn-checkin" style="padding:0.8rem 2rem; font-size:1rem;"
                 [disabled]="selectedRoomIds.length===0" (click)="confirmWalkInBooking()">
                 Confirm Booking ({{ selectedRoomIds.length }})
               </button>

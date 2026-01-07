@@ -25,8 +25,12 @@ export class ReceptionDashboard implements OnInit, AfterViewInit {
   billingsDataSource = new MatTableDataSource<any>([]);
   billingColumns: string[] = ['hotelName', 'guestName', 'roomNumber', 'totalAmount', 'status', 'paymentStatus'];
 
+  walkInRoomsDataSource = new MatTableDataSource<any>([]);
+  walkInColumns: string[] = ['select', 'roomNumber', 'roomType', 'maxGuests', 'pricePerNight', 'totalPrice'];
+
   @ViewChild('billingPaginator') billingPaginator!: MatPaginator;
   @ViewChild('billingSort') billingSort!: MatSort;
+  @ViewChild('walkInPaginator') walkInPaginator!: MatPaginator;
 
   pendingCheckins: any[] = [];
   activeCheckins: any[] = [];
@@ -77,6 +81,9 @@ export class ReceptionDashboard implements OnInit, AfterViewInit {
   }
 
   bindTableFeatures() {
+    if (this.walkInPaginator) {
+      this.walkInRoomsDataSource.paginator = this.walkInPaginator;
+    }
     if (this.billingPaginator) {
       this.billingsDataSource.paginator = this.billingPaginator;
     }
@@ -293,8 +300,14 @@ export class ReceptionDashboard implements OnInit, AfterViewInit {
     this.receptionService.searchRooms(req).subscribe({
       next: (rooms) => {
         this.availableRooms = rooms;
+        this.walkInRoomsDataSource.data = rooms;
         this.walkInStep = 'rooms';
         this.cdr.detectChanges();
+        setTimeout(() => {
+          if (this.walkInPaginator) {
+            this.walkInRoomsDataSource.paginator = this.walkInPaginator;
+          }
+        }, 0);
       },
       error: (err) => {
         const msg = err.error?.message || err.message || 'Search failed';
@@ -310,6 +323,14 @@ export class ReceptionDashboard implements OnInit, AfterViewInit {
     } else {
       this.selectedRoomIds.push(roomId);
     }
+  }
+
+  isSelected(roomId: number): boolean {
+    return this.selectedRoomIds.includes(roomId);
+  }
+
+  processBreakdown(breakdown: any[]): any[] {
+    return breakdown || [];
   }
 
   confirmWalkInBooking() {

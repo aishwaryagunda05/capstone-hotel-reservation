@@ -14,8 +14,8 @@ namespace HotelReservationApi.Data.Migrations
             // Wipe data to avoid FK conflicts
             migrationBuilder.Sql("DELETE FROM Notifications");
             migrationBuilder.Sql("DELETE FROM UserHotelAssignments");
-            migrationBuilder.Sql("DELETE FROM Payments");
-            migrationBuilder.Sql("DELETE FROM Invoices");
+            // migrationBuilder.Sql("DELETE FROM Payments");
+            // migrationBuilder.Sql("DELETE FROM Invoices");
             migrationBuilder.Sql("DELETE FROM ServiceRequests");
             migrationBuilder.Sql("DELETE FROM ReservationRooms");
             migrationBuilder.Sql("DELETE FROM Reservations");
@@ -54,15 +54,6 @@ namespace HotelReservationApi.Data.Migrations
                 table: "RoomTypes",
                 column: "HotelId");
 
-            /*
-            migrationBuilder.AddForeignKey(
-                name: "FK_RoomTypes_Hotels_HotelId",
-                table: "RoomTypes",
-                column: "HotelId",
-                principalTable: "Hotels",
-                principalColumn: "HotelId",
-                onDelete: ReferentialAction.Cascade);
-            */
         }
 
         /// <inheritdoc />

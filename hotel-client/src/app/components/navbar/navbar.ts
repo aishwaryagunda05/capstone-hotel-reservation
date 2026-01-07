@@ -20,7 +20,6 @@ export class NavbarComponent {
   isLogged = false;
   isMobileMenuOpen = false;
   unreadNotifications$: Observable<any[]>;
-
   constructor(
     public auth: AuthService,
     private router: Router,
@@ -29,7 +28,6 @@ export class NavbarComponent {
     this.unreadNotifications$ = this.notificationService.notifications$.pipe(
       map(notes => notes.filter(n => !n.isRead))
     );
-
     this.router.events.subscribe(() => {
       this.isMobileMenuOpen = false;
       this.showProfile = false;

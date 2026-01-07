@@ -78,6 +78,7 @@ export class ManageRoomsComponent implements OnInit {
                     if (this.selectedHotelId) {
                         this.selectHotel(this.selectedHotelId);
                     } else {
+                        this.loading = false;
                         this.cdr.detectChanges();
                     }
                 }, 100);

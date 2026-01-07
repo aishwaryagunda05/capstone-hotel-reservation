@@ -1,121 +1,131 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\aish_files\\HotelReservationApi\\",
+  "WorkspaceRootPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\userhotelassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Rooms.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Hotels.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\userhotelassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\userhotelassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\servicerequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\servicerequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\servicerequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\checkoutreminderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\checkoutreminderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\checkoutreminderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\services\\billingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\services\\billingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:services\\billingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\servicerequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\servicerequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\servicerequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\seasonalpricingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\seasonalpricingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\seasonalpricingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\managerroomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\managerroomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\managerroomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\managerreservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\managerreservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\managerreservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\managerreportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\managerreportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\managerreportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\billingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\billingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\billingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\aish_files\\hotelreservationapi\\hotelreservation.tests\\services\\reservationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\hotelreservation.tests\\services\\reservationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|solutionrelative:hotelreservation.tests\\services\\reservationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\aish_files\\hotelreservationapi\\hotelreservation.tests\\services\\billingservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\hotelreservation.tests\\services\\billingservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|solutionrelative:hotelreservation.tests\\services\\billingservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\aish_files\\hotelreservationapi\\hotelreservation.tests\\controllers\\reportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\hotelreservation.tests\\controllers\\reportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|solutionrelative:hotelreservation.tests\\controllers\\reportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\aish_files\\hotelreservationapi\\hotelreservation.tests\\controllers\\managerreportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\hotelreservation.tests\\controllers\\managerreportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|solutionrelative:hotelreservation.tests\\controllers\\managerreportscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\aish_files\\hotelreservationapi\\hotelreservation.tests\\controllers\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\hotelreservation.tests\\controllers\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32AF8856-72FA-49D7-8B82-769AE9E77216}|HotelReservation.Tests\\HotelReservation.Tests.csproj|solutionrelative:hotelreservation.tests\\controllers\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\aish_files\\hotelreservationapi\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -144,7 +154,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -156,11 +166,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.Hotels [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Hotels.sql",
+              "ToolTip": "dbo.Hotels [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-01-07T12:57:34.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "dbo.Rooms [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Rooms.sql",
+              "ToolTip": "dbo.Rooms [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-01-07T12:21:27.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-07T11:49:53.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserHotelAssignmentService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\UserHotelAssignmentService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\UserHotelAssignmentService.cs",
               "RelativeDocumentMoniker": "Services\\UserHotelAssignmentService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\UserHotelAssignmentService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\UserHotelAssignmentService.cs",
               "RelativeToolTip": "Services\\UserHotelAssignmentService.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAgwF4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -169,371 +212,343 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "CheckoutReminderService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\CheckoutReminderService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\CheckoutReminderService.cs",
               "RelativeDocumentMoniker": "Services\\CheckoutReminderService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\CheckoutReminderService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\CheckoutReminderService.cs",
               "RelativeToolTip": "Services\\CheckoutReminderService.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAYwB0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:29:04.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReservationService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\ReservationService.cs",
-              "RelativeDocumentMoniker": "Services\\ReservationService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\ReservationService.cs",
-              "RelativeToolTip": "Services\\ReservationService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA1wN4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T11:47:03.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RoomService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\RoomService.cs",
-              "RelativeDocumentMoniker": "Services\\RoomService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\RoomService.cs",
-              "RelativeToolTip": "Services\\RoomService.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAIwE8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T13:17:35.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServiceRequestService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\ServiceRequestService.cs",
-              "RelativeDocumentMoniker": "Services\\ServiceRequestService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\ServiceRequestService.cs",
-              "RelativeToolTip": "Services\\ServiceRequestService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwCIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T14:33:38.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BillingService.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Services\\BillingService.cs",
-              "RelativeDocumentMoniker": "Services\\BillingService.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Services\\BillingService.cs",
-              "RelativeToolTip": "Services\\BillingService.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAgwJ4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T19:05:37.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:29:04.696Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ReservationRepository.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Repositories\\ReservationRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ReservationRepository.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Repositories\\ReservationRepository.cs",
-              "RelativeToolTip": "Repositories\\ReservationRepository.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAADwvxoAAAA/AAAAAAAAAA==",
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ReservationService.cs",
+              "RelativeDocumentMoniker": "Services\\ReservationService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ReservationService.cs",
+              "RelativeToolTip": "Services\\ReservationService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wN4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T19:04:57.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T11:47:03.257Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ExceptionMiddleware.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Middleware\\ExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Middleware\\ExceptionMiddleware.cs",
-              "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "RoomService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\RoomService.cs",
+              "RelativeDocumentMoniker": "Services\\RoomService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\RoomService.cs",
+              "RelativeToolTip": "Services\\RoomService.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAIwE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:59:15.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T13:17:35.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DbSeeder.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Data\\DbSeeder.cs",
-              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Data\\DbSeeder.cs",
-              "RelativeToolTip": "Data\\DbSeeder.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwDgAAAANAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ServiceRequestService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ServiceRequestService.cs",
+              "RelativeDocumentMoniker": "Services\\ServiceRequestService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ServiceRequestService.cs",
+              "RelativeToolTip": "Services\\ServiceRequestService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwCIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:58:41.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ReservationsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ReservationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ReservationsController.cs",
-              "RelativeToolTip": "Controllers\\ReservationsController.cs",
-              "ViewState": "AgIAACwBAAAAAAAAAAAiwCABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T11:19:39.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T14:33:38.979Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "Models\\Notification.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Models\\Notification.cs",
-              "RelativeToolTip": "Models\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Title": "BillingService.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\BillingService.cs",
+              "RelativeDocumentMoniker": "Services\\BillingService.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\BillingService.cs",
+              "RelativeToolTip": "Services\\BillingService.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAgwJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T13:44:10.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T19:05:37.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServiceRequest.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Models\\ServiceRequest.cs",
-              "RelativeDocumentMoniker": "Models\\ServiceRequest.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Models\\ServiceRequest.cs",
-              "RelativeToolTip": "Models\\ServiceRequest.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAwwB8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Repositories\\ReservationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ReservationRepository.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Repositories\\ReservationRepository.cs",
+              "RelativeToolTip": "Repositories\\ReservationRepository.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAADwvxoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T14:22:45.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ReportsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ReportsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReportsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ReportsController.cs",
-              "RelativeToolTip": "Controllers\\ReportsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:56:52.98Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T19:04:57.582Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "SeasonalPricingController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\SeasonalPricingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SeasonalPricingController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\SeasonalPricingController.cs",
-              "RelativeToolTip": "Controllers\\SeasonalPricingController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwCUAAAAZAAAAAAAAAA==",
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T14:08:10.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:59:15.212Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ServiceRequestsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ServiceRequestsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceRequestsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ServiceRequestsController.cs",
-              "RelativeToolTip": "Controllers\\ServiceRequestsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAANAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "Data\\DbSeeder.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwDgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T14:39:03.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ManagerRoomsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerRoomsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ManagerRoomsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerRoomsController.cs",
-              "RelativeToolTip": "Controllers\\ManagerRoomsController.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAswCMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:56:24.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:58:41.924Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "ManagerReservationsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerReservationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ManagerReservationsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerReservationsController.cs",
-              "RelativeToolTip": "Controllers\\ManagerReservationsController.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ReservationsController.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAAiwCABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:56:12.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T11:19:39.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ManagerController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ManagerController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerController.cs",
-              "RelativeToolTip": "Controllers\\ManagerController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwCkAAABlAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Models\\Notification.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Notification.cs",
+              "RelativeToolTip": "Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:55:00.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T13:44:10.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BillingController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\BillingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BillingController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\BillingController.cs",
-              "RelativeToolTip": "Controllers\\BillingController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "ServiceRequest.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\ServiceRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceRequest.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\ServiceRequest.cs",
+              "RelativeToolTip": "Models\\ServiceRequest.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:54:27.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "HotelsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\HotelsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HotelsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\HotelsController.cs",
-              "RelativeToolTip": "Controllers\\HotelsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T11:58:30.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T14:22:45.646Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "ManagerReportsController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerReportsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ManagerReportsController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\ManagerReportsController.cs",
-              "RelativeToolTip": "Controllers\\ManagerReportsController.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAADwv00BAAANAAAAAAAAAA==",
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReportsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReportsController.cs",
+              "RelativeToolTip": "Controllers\\ReportsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T17:23:01.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:56:52.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SeasonalPricingController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\SeasonalPricingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SeasonalPricingController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\SeasonalPricingController.cs",
+              "RelativeToolTip": "Controllers\\SeasonalPricingController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwCUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T14:08:10.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServiceRequestsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ServiceRequestsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceRequestsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ServiceRequestsController.cs",
+              "RelativeToolTip": "Controllers\\ServiceRequestsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T14:39:03.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ManagerRoomsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerRoomsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerRoomsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerRoomsController.cs",
+              "RelativeToolTip": "Controllers\\ManagerRoomsController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAswCMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T18:56:24.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ManagerReservationsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerReservationsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ManagerReservationsController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T18:56:12.182Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwLQAAABAAAAAAAAAAA==",
+              "Title": "ManagerController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerController.cs",
+              "RelativeToolTip": "Controllers\\ManagerController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCkAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:54:02.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminUsersController.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Controllers\\AdminUsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminUsersController.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Controllers\\AdminUsersController.cs",
-              "RelativeToolTip": "Controllers\\AdminUsersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:52:55.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:55:00.147Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "ReservationServiceTests.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
-              "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
-              "RelativeToolTip": "HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEAAAAuAAAAAAAAAA==",
+              "Title": "BillingController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\BillingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BillingController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\BillingController.cs",
+              "RelativeToolTip": "Controllers\\BillingController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:51:32.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:54:27.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "HotelsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\HotelsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HotelsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\HotelsController.cs",
+              "RelativeToolTip": "Controllers\\HotelsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T11:58:30.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ManagerReportsController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReportsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerReportsController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReportsController.cs",
+              "RelativeToolTip": "Controllers\\ManagerReportsController.cs",
+              "ViewState": "AgIAADMBAAAAAAAAAADwv00BAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T17:23:01.552Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "BillingServiceTests.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Services\\BillingServiceTests.cs",
-              "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\BillingServiceTests.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Services\\BillingServiceTests.cs",
-              "RelativeToolTip": "HotelReservation.Tests\\Services\\BillingServiceTests.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAgwHcAAAA8AAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwLQAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:49:42.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:54:02.799Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "ReportsControllerTests.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
-              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
-              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABGAAAAAAAAAA==",
+              "Title": "AdminUsersController.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AdminUsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminUsersController.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AdminUsersController.cs",
+              "RelativeToolTip": "Controllers\\AdminUsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:49:14.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:52:55.517Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
-              "Title": "ManagerReportsControllerTests.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
-              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
-              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0AAAAAAAAAAAAAAA==",
+              "Title": "ReservationServiceTests.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
+              "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
+              "RelativeToolTip": "HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:46:13.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:51:32.961Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "AuthControllerTests.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
-              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
-              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAA4AAAAAAAAAA==",
+              "Title": "BillingServiceTests.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\BillingServiceTests.cs",
+              "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\BillingServiceTests.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\BillingServiceTests.cs",
+              "RelativeToolTip": "HotelReservation.Tests\\Services\\BillingServiceTests.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAgwHcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:42:35.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:49:42.718Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "Room.cs",
-              "DocumentMoniker": "C:\\aish_files\\HotelReservationApi\\Models\\Room.cs",
-              "RelativeDocumentMoniker": "Models\\Room.cs",
-              "ToolTip": "C:\\aish_files\\HotelReservationApi\\Models\\Room.cs",
-              "RelativeToolTip": "Models\\Room.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAwwB0AAAAAAAAAAAAAAA==",
+              "Title": "ReportsControllerTests.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
+              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
+              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T13:44:07.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T18:49:14.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ManagerReportsControllerTests.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
+              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
+              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T18:46:13.398Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
+              "Title": "AuthControllerTests.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
+              "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
+              "RelativeToolTip": "HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T18:42:35.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T13:44:07.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "dbo.Rooms.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Rooms.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Rooms.sql",
@@ -542,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "dbo.RoomTypes.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.RoomTypes.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.RoomTypes.sql",
@@ -551,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "dbo.Hotels.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Hotels.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Hotels.sql",
@@ -560,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "dbo.Users.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Users.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Users.sql",
@@ -569,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "dbo.ReservationRooms.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.ReservationRooms.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.ReservationRooms.sql",
@@ -578,7 +593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "dbo.Reservations.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Reservations.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Reservations.sql",

@@ -1,0 +1,10 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  HotelReservationApi -> C:\Chubb\cloned-capstone\capstone-hotel-reservation\HotelReservationApi\bin\Debug\net9.0\HotelReservationApi.dll
+  HotelReservation.Tests -> C:\Chubb\cloned-capstone\capstone-hotel-reservation\HotelReservationApi\HotelReservation.Tests\bin\Debug\net9.0\HotelReservation.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.14

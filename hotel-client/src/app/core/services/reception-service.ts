@@ -12,7 +12,6 @@ export class ReceptionService {
     constructor(private http: HttpClient) { }
 
     getAssignedHotelReservations(): Observable<any[]> {
-        console.log('ReceptionService: Fetching from', `${this.baseUrl}receptionist/my-hotel`);
         return this.http.get<any[]>(`${this.baseUrl}receptionist/my-hotel`);
     }
 

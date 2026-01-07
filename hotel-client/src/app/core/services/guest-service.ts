@@ -18,7 +18,6 @@ export class GuestService {
   constructor(private http: HttpClient) { }
 
   getHotels(): Observable<Hotel[]> {
-    console.log('GuestService: Fetching hotels from', `${this.base}/hotels`);
     return this.http.get<Hotel[]>(`${this.base}/hotels`).pipe(
       timeout(5000), 
       tap({

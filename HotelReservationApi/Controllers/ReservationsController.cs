@@ -33,7 +33,12 @@ namespace HotelReservation.Api.Controllers
         [HttpPost("search")]
         [Authorize]
         public async Task<IActionResult> Search(RoomSearchRequestDto dto)
-            => Ok(await _service.SearchRooms(dto));
+        {
+            Console.WriteLine($"[Search Debug] HotelId: {dto.HotelId}, CheckIn: {dto.CheckInDate}, CheckOut: {dto.CheckOutDate}, Guests: {dto.Guests}");
+            var results = await _service.SearchRooms(dto);
+            Console.WriteLine($"[Search Debug] Found {results.Count} rooms");
+            return Ok(results);
+        }
 
         [HttpGet("receptionist/billings")]
         [Authorize(Roles = "Receptionist")]

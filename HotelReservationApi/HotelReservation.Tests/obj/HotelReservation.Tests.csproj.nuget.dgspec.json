@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj": {}
+    "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj": {}
   },
   "projects": {
-    "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj": {
+    "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
+        "projectUniqueName": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
         "projectName": "HotelReservation.Tests",
-        "projectPath": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
+        "projectPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
         "packagesPath": "C:\\Users\\archa\\.nuget\\packages\\",
-        "outputPath": "C:\\aish_files\\HotelReservationApi\\HotelReservation.Tests\\obj\\",
+        "outputPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\aish_files\\HotelReservationApi\\HotelReservationApi.csproj": {
-                "projectPath": "C:\\aish_files\\HotelReservationApi\\HotelReservationApi.csproj"
+              "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservationApi.csproj": {
+                "projectPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservationApi.csproj"
               }
             }
           }
@@ -110,14 +110,14 @@
         }
       }
     },
-    "C:\\aish_files\\HotelReservationApi\\HotelReservationApi.csproj": {
+    "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservationApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\aish_files\\HotelReservationApi\\HotelReservationApi.csproj",
+        "projectUniqueName": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservationApi.csproj",
         "projectName": "HotelReservationApi",
-        "projectPath": "C:\\aish_files\\HotelReservationApi\\HotelReservationApi.csproj",
+        "projectPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservationApi.csproj",
         "packagesPath": "C:\\Users\\archa\\.nuget\\packages\\",
-        "outputPath": "C:\\aish_files\\HotelReservationApi\\obj\\",
+        "outputPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

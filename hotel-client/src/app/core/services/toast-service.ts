@@ -20,9 +20,9 @@ export class ToastService {
 
         this.snackBar.open(message, 'OK', {
             panelClass: [panelClass],
-            duration: 3000
+            duration: 5000
         });
     }
 
-    remove(id: number) { }
+    // remove(id: number) { }
 }
