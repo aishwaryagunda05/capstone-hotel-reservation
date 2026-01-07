@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.RoomTypes.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Rooms.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
@@ -51,10 +58,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62A6E557-A473-A610-60A5-2DD510FA8F7B}|HotelReservationApi.csproj|c:\\chubb\\cloned-capstone\\capstone-hotel-reservation\\hotelreservationapi\\controllers\\servicerequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -154,7 +157,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -167,16 +170,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "dbo.Hotels [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Hotels.sql",
-              "ToolTip": "dbo.Hotels [Data]",
+              "Title": "dbo.RoomTypes [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.RoomTypes.sql",
+              "ToolTip": "dbo.RoomTypes [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-01-07T12:57:34.657Z",
+              "WhenOpened": "2026-01-07T13:42:57.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "dbo.Rooms [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Rooms.sql",
               "ToolTip": "dbo.Rooms [Data]",
@@ -186,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -199,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserHotelAssignmentService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\UserHotelAssignmentService.cs",
               "RelativeDocumentMoniker": "Services\\UserHotelAssignmentService.cs",
@@ -212,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "CheckoutReminderService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\CheckoutReminderService.cs",
               "RelativeDocumentMoniker": "Services\\CheckoutReminderService.cs",
@@ -224,7 +227,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "Data\\DbSeeder.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwDgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T18:58:41.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Hotels [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelReservationDB/True/SqlTable/dbo.Hotels.sql",
+              "ToolTip": "dbo.Hotels [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-01-07T12:57:34.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ReservationService.cs",
               "RelativeDocumentMoniker": "Services\\ReservationService.cs",
@@ -236,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "RoomService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\RoomService.cs",
               "RelativeDocumentMoniker": "Services\\RoomService.cs",
@@ -248,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ServiceRequestService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\ServiceRequestService.cs",
               "RelativeDocumentMoniker": "Services\\ServiceRequestService.cs",
@@ -260,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "BillingService.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Services\\BillingService.cs",
               "RelativeDocumentMoniker": "Services\\BillingService.cs",
@@ -272,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ReservationRepository.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Repositories\\ReservationRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ReservationRepository.cs",
@@ -284,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ExceptionMiddleware.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Middleware\\ExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
@@ -296,19 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DbSeeder.cs",
-              "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
-              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
-              "ToolTip": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Data\\DbSeeder.cs",
-              "RelativeToolTip": "Data\\DbSeeder.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwDgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T18:58:41.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ReservationsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReservationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
@@ -320,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Models\\Notification.cs",
@@ -332,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ServiceRequest.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\ServiceRequest.cs",
               "RelativeDocumentMoniker": "Models\\ServiceRequest.cs",
@@ -344,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ReportsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ReportsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReportsController.cs",
@@ -356,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "SeasonalPricingController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\SeasonalPricingController.cs",
               "RelativeDocumentMoniker": "Controllers\\SeasonalPricingController.cs",
@@ -368,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ServiceRequestsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ServiceRequestsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ServiceRequestsController.cs",
@@ -380,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ManagerRoomsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerRoomsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ManagerRoomsController.cs",
@@ -392,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ManagerReservationsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReservationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ManagerReservationsController.cs",
@@ -404,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ManagerController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerController.cs",
               "RelativeDocumentMoniker": "Controllers\\ManagerController.cs",
@@ -416,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "BillingController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\BillingController.cs",
               "RelativeDocumentMoniker": "Controllers\\BillingController.cs",
@@ -428,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "HotelsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\HotelsController.cs",
               "RelativeDocumentMoniker": "Controllers\\HotelsController.cs",
@@ -440,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ManagerReportsController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\ManagerReportsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ManagerReportsController.cs",
@@ -452,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -464,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "AdminUsersController.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Controllers\\AdminUsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminUsersController.cs",
@@ -476,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ReservationServiceTests.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
               "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\ReservationServiceTests.cs",
@@ -488,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "BillingServiceTests.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Services\\BillingServiceTests.cs",
               "RelativeDocumentMoniker": "HotelReservation.Tests\\Services\\BillingServiceTests.cs",
@@ -500,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ReportsControllerTests.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
               "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ReportsControllerTests.cs",
@@ -512,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "ManagerReportsControllerTests.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
               "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\ManagerReportsControllerTests.cs",
@@ -524,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "AuthControllerTests.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
               "RelativeDocumentMoniker": "HotelReservation.Tests\\Controllers\\AuthControllerTests.cs",
@@ -536,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Room.cs",
               "DocumentMoniker": "C:\\Chubb\\cloned-capstone\\capstone-hotel-reservation\\HotelReservationApi\\Models\\Room.cs",
               "RelativeDocumentMoniker": "Models\\Room.cs",
@@ -548,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "dbo.Rooms.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Rooms.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Rooms.sql",
@@ -557,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "dbo.RoomTypes.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.RoomTypes.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.RoomTypes.sql",
@@ -566,7 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "dbo.Hotels.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Hotels.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Hotels.sql",
@@ -575,7 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "dbo.Users.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Users.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Users.sql",
@@ -584,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "dbo.ReservationRooms.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.ReservationRooms.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.ReservationRooms.sql",
@@ -593,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "dbo.Reservations.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Reservations.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/HotelManagementDB/True/SqlTable/dbo.Reservations.sql",

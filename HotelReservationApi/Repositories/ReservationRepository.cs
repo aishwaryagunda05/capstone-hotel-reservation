@@ -24,7 +24,7 @@ namespace HotelReservation.Api.Repositories
                 .ToListAsync();
             return await _context.Rooms
                 .Include(r => r.RoomType)
-                .Where(r => r.HotelId == hotelId && r.IsActive)
+                .Where(r => r.HotelId == hotelId && r.Status == "Available" && r.IsActive)
                 .Where(r => !occupiedRoomIds.Contains(r.RoomId))
                 .ToListAsync();
         }

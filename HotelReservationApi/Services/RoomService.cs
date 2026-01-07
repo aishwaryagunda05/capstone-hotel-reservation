@@ -25,8 +25,8 @@ namespace HotelReservation.Api.Services
                 RoomTypeId = r.RoomTypeId,
                 RoomNumber = r.RoomNumber,
                 Status = r.Status,
-                Price = r.Price,
-                IsActive = r.IsActive
+                IsActive = r.IsActive,
+                Price = r.Price
             });
         }
 
@@ -45,7 +45,7 @@ namespace HotelReservation.Api.Services
                 RoomNumber = dto.RoomNumber,
                 Price = dto.Price,
                 Status = dto.Status ?? "Available",
-                IsActive = dto.IsActive
+                IsActive = (dto.Status != "Unavailable")
             };
 
             await _repo.AddAsync(entity);
@@ -60,8 +60,8 @@ namespace HotelReservation.Api.Services
             entity.RoomTypeId = dto.RoomTypeId;
             entity.RoomNumber = dto.RoomNumber;
             entity.Status = dto.Status;
+            entity.IsActive = (dto.Status != "Unavailable");
             entity.Price = dto.Price;
-            entity.IsActive = dto.IsActive;
 
             await _repo.UpdateAsync(entity);
         }
@@ -97,8 +97,8 @@ namespace HotelReservation.Api.Services
                 RoomTypeId = r.RoomTypeId,
                 RoomNumber = r.RoomNumber,
                 Status = r.Status,
-                Price = r.Price,
-                IsActive = r.IsActive
+                IsActive = r.IsActive,
+                Price = r.Price
             });
         }
 
@@ -145,8 +145,8 @@ namespace HotelReservation.Api.Services
                 RoomTypeId = r.RoomTypeId,
                 RoomNumber = r.RoomNumber,
                 Status = r.Status,
-                Price = r.Price,
-                IsActive = r.IsActive
+                IsActive = r.IsActive,
+                Price = r.Price
             });
         }
 

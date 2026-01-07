@@ -99,7 +99,7 @@ namespace HotelReservation.Api.Data
                         {
                             for (int i = 1; i <= 5; i++)
                             {
-                                rooms.Add(new Room { RoomNumber = $"10{i}", RoomTypeId = deluxe.RoomTypeId, HotelId = h.HotelId, IsActive = true });
+                                rooms.Add(new Room { RoomNumber = $"10{i}", RoomTypeId = deluxe.RoomTypeId, HotelId = h.HotelId });
                             }
                         }
 
@@ -109,7 +109,7 @@ namespace HotelReservation.Api.Data
                         {
                             for (int i = 1; i <= 3; i++)
                             {
-                                rooms.Add(new Room { RoomNumber = $"20{i}", RoomTypeId = nonAc.RoomTypeId, HotelId = h.HotelId, IsActive = true });
+                                rooms.Add(new Room { RoomNumber = $"20{i}", RoomTypeId = nonAc.RoomTypeId, HotelId = h.HotelId });
                             }
                         }
 
@@ -119,7 +119,7 @@ namespace HotelReservation.Api.Data
                         {
                             for (int i = 1; i <= 2; i++)
                             {
-                                rooms.Add(new Room { RoomNumber = $"30{i}", RoomTypeId = suite.RoomTypeId, HotelId = h.HotelId, IsActive = true });
+                                rooms.Add(new Room { RoomNumber = $"30{i}", RoomTypeId = suite.RoomTypeId, HotelId = h.HotelId });
                             }
                         }
 

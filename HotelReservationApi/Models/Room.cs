@@ -21,9 +21,11 @@ namespace HotelReservation.Api.Models
         [Required]
         public string Status { get; set; } = "Available";
 
+        public bool IsActive { get; set; } = true;
+
         [NotMapped]
         public decimal? Price { get; set; }
 
-        public bool IsActive { get; set; } = true;
+
     }
 }
